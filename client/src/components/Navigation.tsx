@@ -48,9 +48,9 @@ const Navigation = () => {
           <a href="#about" className="hover:text-accent-light transition-colors">
             About
           </a>
-          <a href="#services" className="hover:text-accent-light transition-colors">
+          <Link href="/services" className="hover:text-accent-light transition-colors">
             Services
-          </a>
+          </Link>
           <a href="#projects" className="hover:text-accent-light transition-colors">
             Projects
           </a>
@@ -74,9 +74,9 @@ const Navigation = () => {
           <a href="#about" className="hover:text-accent-light transition-colors" onClick={closeMenu}>
             About
           </a>
-          <a href="#services" className="hover:text-accent-light transition-colors" onClick={closeMenu}>
+          <Link href="/services" className="hover:text-accent-light transition-colors" onClick={closeMenu}>
             Services
-          </a>
+          </Link>
           <a href="#projects" className="hover:text-accent-light transition-colors" onClick={closeMenu}>
             Projects
           </a>
