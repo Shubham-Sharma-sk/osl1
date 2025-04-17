@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Tag, Calendar, Award, ArrowUpRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter"; // Added import for Link from wouter
 
 interface Project {
   id: string;
@@ -132,17 +133,17 @@ const ProjectsSection = () => {
   const [activeProject, setActiveProject] = useState<number>(0);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const projectsRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const checkReveal = () => {
       const windowHeight = window.innerHeight;
       const revealPoint = 150;
-      
+
       revealElements.forEach(element => {
         const revealTop = element.getBoundingClientRect().top;
-        
+
         if (revealTop < windowHeight - revealPoint) {
           element.classList.add('revealed');
         }
@@ -151,7 +152,7 @@ const ProjectsSection = () => {
 
     window.addEventListener('scroll', checkReveal);
     window.addEventListener('resize', checkReveal);
-    
+
     return () => {
       window.removeEventListener('scroll', checkReveal);
       window.removeEventListener('resize', checkReveal);
@@ -189,14 +190,14 @@ const ProjectsSection = () => {
           <p className="text-xl text-gray-400 max-w-2xl reveal">
             Explore our latest work and see how we've helped businesses transform their digital presence.
           </p>
-          <Link href="/projects">
+          <Link href="/projects"> {/* Link component used here */}
             <Button className="mt-6 group">
               <span>View All Projects</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
-        
+
         <div className="flex gap-2 mt-6 md:mt-0">
           <Button 
             variant="outline" 
@@ -218,7 +219,7 @@ const ProjectsSection = () => {
           </Button>
         </div>
       </div>
-      
+
       {/* Project Navigation */}
       <div className="flex overflow-x-auto scrollbar-hide mb-12 gap-4 pb-4">
         {projects.map((p, index) => (
@@ -235,7 +236,7 @@ const ProjectsSection = () => {
           </button>
         ))}
       </div>
-      
+
       {/* Main Project Display */}
       <motion.div
         key={activeProject}
@@ -263,7 +264,7 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Project Info */}
           <div className="space-y-8">
             <div>
@@ -278,13 +279,13 @@ const ProjectsSection = () => {
                   <Award className="h-3 w-3 mr-1" /> {project.client}
                 </span>
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h3>
               <p className="text-lg text-gray-300 mb-6">
                 {project.overview}
               </p>
             </div>
-            
+
             {/* Key Features */}
             <div>
               <h4 className="text-xl font-semibold mb-4 flex items-center">
@@ -302,7 +303,7 @@ const ProjectsSection = () => {
                 ))}
               </ul>
             </div>
-            
+
             {/* Results */}
             <div>
               <h4 className="text-xl font-semibold mb-4 flex items-center">
@@ -320,7 +321,7 @@ const ProjectsSection = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Technologies */}
             <div>
               <h4 className="text-xl font-semibold mb-4 flex items-center">
@@ -338,7 +339,7 @@ const ProjectsSection = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* CTA */}
             <div className="pt-4">
               <Button className="group">
@@ -348,7 +349,7 @@ const ProjectsSection = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Testimonial */}
         {project.testimonial && (
           <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
@@ -369,7 +370,7 @@ const ProjectsSection = () => {
           </div>
         )}
       </motion.div>
-      
+
       {/* Project Indicator */}
       <div className="flex justify-center mt-16">
         <div className="flex gap-2">
