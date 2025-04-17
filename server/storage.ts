@@ -63,7 +63,12 @@ export class MemStorage implements IStorage {
   
   async getAllContacts(): Promise<Contact[]> {
     return Array.from(this.contacts.values())
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      .sort((a, b) => {
+        // Handle cases where createdAt might be null (should never happen in our implementation)
+        const dateA = a.createdAt || new Date();
+        const dateB = b.createdAt || new Date();
+        return dateB.getTime() - dateA.getTime();
+      });
   }
   
   async getContact(id: number): Promise<Contact | undefined> {
