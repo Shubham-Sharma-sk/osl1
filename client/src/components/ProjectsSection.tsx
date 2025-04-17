@@ -189,6 +189,12 @@ const ProjectsSection = () => {
           <p className="text-xl text-gray-400 max-w-2xl reveal">
             Explore our latest work and see how we've helped businesses transform their digital presence.
           </p>
+          <Link href="/projects">
+            <Button className="mt-6 group">
+              <span>View All Projects</span>
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
         
         <div className="flex gap-2 mt-6 md:mt-0">
