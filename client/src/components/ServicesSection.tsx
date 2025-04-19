@@ -2,7 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { ArrowRight, Cpu, Layers, Code, PenTool, BarChart3, ShoppingCart, Globe, Zap, Rocket } from "lucide-react";
+import { ArrowRight, Cpu, Layers, Code, PenTool, BarChart3, BrainCircuit, MessageSquareText, LineChart, Zap, Rocket } from "lucide-react";
+import { CircleBlob, GridPattern, FloatingShapes, FloatingCircles, Sparkle, GlowingSphere } from "./ui/decorative-elements";
+import WebDevIllustration from "./ui/illustrations/WebDevIllustration";
+import StrategyIllustration from "./ui/illustrations/StrategyIllustration";
 
 export interface Service {
   id: string;
@@ -27,6 +30,7 @@ export interface Service {
     description: string;
     result: string;
   }[];
+  illustration: JSX.Element;
 }
 
 export const services: Service[] = [
@@ -93,415 +97,454 @@ export const services: Service[] = [
     caseStudies: [
       {
         title: "E-commerce Platform Redesign",
-        description: "Rebuilt an outdated e-commerce site with modern architecture and improved user experience.",
-        result: "200% increase in mobile conversions and 40% reduction in cart abandonment."
+        description: "Rebuilt an outdated e-commerce site with modern technologies, improving UX and performance.",
+        result: "127% increase in conversion rate, 45% reduction in bounce rate"
       },
       {
         title: "SaaS Dashboard Development",
-        description: "Created an intuitive, data-rich dashboard for a SaaS product with real-time analytics.",
-        result: "User engagement increased by 60% and customer retention improved by 25%."
+        description: "Created an intuitive analytics dashboard for a SaaS company to visualize customer data.",
+        result: "Reduced customer churn by 32%, increased feature adoption by 47%"
       }
-    ]
+    ],
+    illustration: <WebDevIllustration />
   },
   {
-    id: "digital-design",
-    title: "Digital Design",
-    shortDescription: "Crafting intuitive, stunning interfaces that elevate your brand and captivate your audience.",
-    fullDescription: "Our design philosophy centers on creating meaningful user experiences that align with your brand values while delighting your customers. We believe great design is invisible – it should feel natural and intuitive while guiding users toward their goals effortlessly.",
-    icon: <PenTool className="h-8 w-8 text-purple-400" />,
+    id: "ai-chatbot",
+    title: "AI Chatbot",
+    shortDescription: "Intelligent conversational agents that enhance customer service and streamline operations.",
+    fullDescription: "Our AI chatbots leverage natural language processing and machine learning to provide intelligent, human-like interactions. We design and develop custom chatbot solutions that can handle customer inquiries, automate routine tasks, and provide 24/7 support for your business.",
+    icon: <MessageSquareText className="h-8 w-8 text-purple-400" />,
     features: [
       {
-        title: "UI/UX Design",
-        description: "User-centered design processes that create intuitive, enjoyable experiences for your customers.",
+        title: "Natural Language Processing",
+        description: "Advanced NLP capabilities for understanding and responding to human language naturally.",
+        icon: <BrainCircuit className="h-6 w-6 text-purple-400" />
+      },
+      {
+        title: "Multi-channel Integration",
+        description: "Seamless integration with websites, mobile apps, messaging platforms, and social media.",
         icon: <Layers className="h-6 w-6 text-purple-400" />
       },
       {
-        title: "Responsive Web Design",
-        description: "Websites that adapt perfectly to any screen size, providing optimal viewing experiences.",
-        icon: <Globe className="h-6 w-6 text-purple-400" />
-      },
-      {
-        title: "Interaction Design",
-        description: "Thoughtful animations and micro-interactions that guide users and add delight.",
+        title: "Personalized Interactions",
+        description: "AI-driven personalization that adapts to user preferences and conversation history.",
         icon: <Cpu className="h-6 w-6 text-purple-400" />
       },
       {
-        title: "Design Systems",
-        description: "Cohesive design frameworks that ensure consistency and accelerate future development.",
-        icon: <PenTool className="h-6 w-6 text-purple-400" />
-      }
-    ],
-    benefits: [
-      "Higher user satisfaction scores with intuitive interfaces",
-      "Stronger brand recognition through consistent visual language",
-      "Reduced development time with reusable design components",
-      "Better accessibility compliance for wider audience reach"
-    ],
-    techStack: [
-      "Figma", "Adobe Creative Suite", "Framer", "Sketch", "InVision", "Principle", "Webflow", "Storybook"
-    ],
-    processSteps: [
-      {
-        title: "Research & Discovery",
-        description: "Conducting user research, competitor analysis, and brand exploration."
-      },
-      {
-        title: "Conceptualization",
-        description: "Developing creative concepts and visual directions based on research findings."
-      },
-      {
-        title: "Wireframing & Prototyping",
-        description: "Creating structural layouts and interactive prototypes to test user flows."
-      },
-      {
-        title: "Visual Design",
-        description: "Applying brand elements, color palettes, typography, and imagery to create polished designs."
-      },
-      {
-        title: "User Testing & Refinement",
-        description: "Gathering user feedback and iterating on designs to optimize the experience."
-      }
-    ],
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e",
-    caseStudies: [
-      {
-        title: "Financial App Redesign",
-        description: "Simplified complex financial data into intuitive visualizations and user-friendly interfaces.",
-        result: "App store rating increased from 3.2 to 4.8 stars with 30% increase in daily active users."
-      },
-      {
-        title: "Brand Identity System",
-        description: "Created comprehensive brand identity and design system for a growing tech startup.",
-        result: "Consistent user experience across all platforms and 40% faster development of new features."
-      }
-    ]
-  },
-  {
-    id: "e-commerce",
-    title: "E-Commerce Solutions",
-    shortDescription: "Building digital storefronts that drive sales, enhance customer experience, and scale with your business.",
-    fullDescription: "Our e-commerce solutions transform online shopping into seamless, engaging experiences that convert browsers into buyers and first-time customers into loyal advocates. We focus on creating purchasing journeys that feel effortless while maximizing your sales potential.",
-    icon: <ShoppingCart className="h-8 w-8 text-purple-400" />,
-    features: [
-      {
-        title: "Custom E-Commerce Development",
-        description: "Tailor-made online stores designed specifically for your products and customer base.",
-        icon: <Code className="h-6 w-6 text-purple-400" />
-      },
-      {
-        title: "Shopping Cart Integration",
-        description: "Streamlined checkout processes that minimize abandonment and maximize conversions.",
-        icon: <ShoppingCart className="h-6 w-6 text-purple-400" />
-      },
-      {
-        title: "Payment Gateway Setup",
-        description: "Secure, flexible payment solutions that offer customers their preferred payment methods.",
-        icon: <Layers className="h-6 w-6 text-purple-400" />
-      },
-      {
-        title: "Inventory Management Systems",
-        description: "Automated solutions that keep your stock levels accurate and help prevent overselling.",
+        title: "Analytics & Insights",
+        description: "Comprehensive analytics to track performance and gain insights from customer interactions.",
         icon: <BarChart3 className="h-6 w-6 text-purple-400" />
       }
     ],
     benefits: [
-      "Increased average order value through optimized product presentation",
-      "Higher conversion rates with streamlined checkout processes",
-      "Improved inventory efficiency and reduced management costs",
-      "Enhanced customer loyalty through personalized shopping experiences"
+      "24/7 customer support without human intervention",
+      "Reduced operational costs and increased efficiency",
+      "Consistent brand experience across all touchpoints",
+      "Valuable customer insights from conversation data"
     ],
     techStack: [
-      "Shopify", "WooCommerce", "Magento", "BigCommerce", "Stripe", "PayPal", "Square", "AWS", "Algolia", "Sanity"
+      "OpenAI GPT-4", "Azure AI", "Google Dialogflow", "TensorFlow", "PyTorch", "BERT", "RASA", "Node.js", "Python"
     ],
     processSteps: [
       {
-        title: "Strategy & Planning",
-        description: "Defining your e-commerce goals, target audience, and technical requirements."
+        title: "Requirements Analysis",
+        description: "Understanding your business needs and defining the chatbot's scope and capabilities."
       },
       {
-        title: "Platform Selection",
-        description: "Evaluating and selecting the right e-commerce platform for your specific needs."
+        title: "Conversation Design",
+        description: "Crafting natural, effective conversation flows and personality for your chatbot."
       },
       {
-        title: "Custom Development",
-        description: "Building your online store with tailored functionality and seamless integrations."
+        title: "AI Model Training",
+        description: "Training and fine-tuning the AI models with your domain-specific data."
       },
       {
-        title: "Payment & Shipping Integration",
-        description: "Setting up secure payment processing and optimized shipping solutions."
+        title: "Integration & Testing",
+        description: "Integrating with your existing systems and testing for accuracy and performance."
       },
       {
-        title: "Launch & Optimization",
-        description: "Deploying your store and continuously improving based on performance data."
+        title: "Deployment & Optimization",
+        description: "Launching your chatbot and continuously improving based on real-world interactions."
       }
     ],
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a",
     caseStudies: [
       {
-        title: "Luxury Retail Brand",
-        description: "Developed a premium shopping experience with AR product visualization and personalization.",
-        result: "45% increase in conversion rate and 60% increase in average order value."
+        title: "Customer Support Automation",
+        description: "Implemented an AI chatbot for a telecommunications company to handle customer inquiries.",
+        result: "Reduced support costs by 42%, improved customer satisfaction by 28%"
       },
       {
-        title: "Multi-vendor Marketplace",
-        description: "Built a scalable marketplace platform connecting independent creators with customers.",
-        result: "Grew from 5 to 500 vendors in 6 months with 100,000+ monthly transactions."
+        title: "E-commerce Sales Assistant",
+        description: "Developed a conversational shopping assistant for an online retailer.",
+        result: "35% increase in average order value, 22% improvement in cart completion rate"
       }
-    ]
+    ],
+    illustration: <StrategyIllustration />
   },
   {
-    id: "digital-strategy",
-    title: "Digital Strategy",
-    shortDescription: "Crafting data-driven roadmaps for digital success that align with your business goals and market opportunities.",
-    fullDescription: "Our digital strategy services help businesses navigate the complex digital landscape with clarity and purpose. We analyze market trends, customer behavior, and competitive positioning to develop strategic initiatives that drive meaningful business growth and sustainable competitive advantage.",
-    icon: <BarChart3 className="h-8 w-8 text-purple-400" />,
+    id: "ai-agent",
+    title: "AI Agent",
+    shortDescription: "Autonomous AI agents that perform complex tasks and workflows with minimal human intervention.",
+    fullDescription: "Our AI agents go beyond chatbots to provide autonomous decision-making and task execution. These intelligent systems can handle complex workflows, data analysis, and process automation, allowing your team to focus on high-value activities that require human creativity and judgment.",
+    icon: <BrainCircuit className="h-8 w-8 text-purple-400" />,
     features: [
       {
-        title: "Market Research & Analysis",
-        description: "Deep insights into your industry, competitors, and target audience to inform strategic decisions.",
-        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
+        title: "Autonomous Decision Making",
+        description: "AI systems that can make decisions based on complex criteria and business rules.",
+        icon: <Cpu className="h-6 w-6 text-purple-400" />
       },
       {
-        title: "Competitive Positioning",
-        description: "Strategies to differentiate your brand and establish a compelling market position.",
+        title: "Process Automation",
+        description: "End-to-end automation of complex business processes and workflows.",
         icon: <Rocket className="h-6 w-6 text-purple-400" />
       },
       {
-        title: "User Journey Mapping",
-        description: "Visualizing and optimizing every touchpoint in your customer's interaction with your brand.",
-        icon: <Layers className="h-6 w-6 text-purple-400" />
+        title: "Data Analysis & Insights",
+        description: "Advanced analytics capabilities to process large datasets and extract actionable insights.",
+        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
       },
       {
-        title: "Performance Optimization",
-        description: "Ongoing analysis and refinement to continuously improve digital performance metrics.",
-        icon: <Zap className="h-6 w-6 text-purple-400" />
+        title: "API & System Integration",
+        description: "Seamless integration with your existing software ecosystem and third-party services.",
+        icon: <Code className="h-6 w-6 text-purple-400" />
       }
     ],
     benefits: [
-      "Clearer direction and focus for digital investments",
-      "Better alignment between digital initiatives and business goals",
-      "More efficient resource allocation based on strategic priorities",
-      "Increased ROI from coordinated digital efforts"
+      "Dramatic reduction in manual, repetitive tasks",
+      "Increased accuracy and consistency in operations",
+      "Faster processing times for complex workflows",
+      "Scalable solutions that grow with your business"
     ],
     techStack: [
-      "Google Analytics", "Hotjar", "SEMrush", "Ahrefs", "Tableau", "Mixpanel", "Salesforce", "HubSpot", "Mailchimp"
+      "OpenAI GPT-4", "LangChain", "Vector Databases", "AWS Lambda", "Azure Functions", "Python", "Node.js", "Docker", "Kubernetes"
     ],
     processSteps: [
       {
-        title: "Digital Audit",
-        description: "Comprehensive assessment of your current digital presence, assets, and performance."
+        title: "Process Analysis",
+        description: "Identifying processes that can benefit from AI automation and defining success criteria."
       },
       {
-        title: "Goal Setting & KPI Definition",
-        description: "Establishing clear objectives and measurable key performance indicators."
+        title: "Agent Architecture Design",
+        description: "Designing the AI agent's architecture, capabilities, and integration points."
+      },
+      {
+        title: "Development & Training",
+        description: "Building the agent and training it with relevant data and business logic."
+      },
+      {
+        title: "Testing & Validation",
+        description: "Rigorous testing to ensure accuracy, reliability, and security."
+      },
+      {
+        title: "Deployment & Monitoring",
+        description: "Deploying the agent to production and implementing continuous monitoring and improvement."
+      }
+    ],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+    caseStudies: [
+      {
+        title: "Financial Data Processing",
+        description: "Created an AI agent to automate financial data processing and reporting for a financial services firm.",
+        result: "85% reduction in processing time, 95% accuracy improvement"
+      },
+      {
+        title: "HR Workflow Automation",
+        description: "Developed an AI agent to streamline employee onboarding and documentation processes.",
+        result: "Reduced onboarding time by 67%, improved compliance by 40%"
+      }
+    ],
+    illustration: <StrategyIllustration />
+  },
+  {
+    id: "business-planning",
+    title: "Business Planning",
+    shortDescription: "Strategic planning and roadmapping to align your technology investments with business objectives.",
+    fullDescription: "Our business planning services help organizations develop clear, actionable strategies for digital transformation and growth. We work closely with your leadership team to understand your business goals, market position, and competitive landscape, then create comprehensive plans to achieve your objectives.",
+    icon: <LineChart className="h-8 w-8 text-purple-400" />,
+    features: [
+      {
+        title: "Digital Transformation Strategy",
+        description: "Comprehensive strategies to leverage technology for business growth and innovation.",
+        icon: <Rocket className="h-6 w-6 text-purple-400" />
+      },
+      {
+        title: "Technology Roadmapping",
+        description: "Detailed technology roadmaps aligned with your business objectives and timeline.",
+        icon: <LineChart className="h-6 w-6 text-purple-400" />
+      },
+      {
+        title: "Market & Competitive Analysis",
+        description: "In-depth analysis of market trends, customer needs, and competitive landscape.",
+        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
+      },
+      {
+        title: "Investment Planning",
+        description: "Strategic planning for technology investments to maximize ROI and business impact.",
+        icon: <Layers className="h-6 w-6 text-purple-400" />
+      }
+    ],
+    benefits: [
+      "Aligned technology and business strategies",
+      "Clear roadmap for digital transformation initiatives",
+      "Optimized technology investments and resource allocation",
+      "Competitive advantage through strategic innovation"
+    ],
+    techStack: [
+      "Strategic Planning Frameworks", "Market Analysis Tools", "Financial Modeling", "Project Management", "Risk Assessment", "ROI Analysis"
+    ],
+    processSteps: [
+      {
+        title: "Discovery & Assessment",
+        description: "Understanding your current state, business goals, and challenges."
+      },
+      {
+        title: "Market & Competitive Analysis",
+        description: "Analyzing market trends, customer needs, and competitive landscape."
       },
       {
         title: "Strategy Development",
-        description: "Creating a tailored digital roadmap aligned with your business goals and market position."
+        description: "Creating a comprehensive strategy aligned with your business objectives."
       },
       {
-        title: "Implementation Planning",
-        description: "Detailing the tactical execution plan, resource requirements, and timeline."
+        title: "Roadmap Creation",
+        description: "Developing a detailed implementation roadmap with clear milestones."
       },
       {
-        title: "Measurement & Optimization",
-        description: "Tracking performance against KPIs and making data-driven adjustments."
+        title: "Execution Support",
+        description: "Providing ongoing guidance and support during implementation."
       }
     ],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
     caseStudies: [
       {
-        title: "B2B SaaS Growth Strategy",
-        description: "Developed comprehensive digital strategy for a B2B SaaS platform targeting enterprise clients.",
-        result: "250% increase in qualified leads and 30% reduction in customer acquisition costs."
+        title: "Retail Digital Transformation",
+        description: "Developed a comprehensive digital transformation strategy for a retail chain.",
+        result: "Successful omnichannel implementation, 38% increase in digital sales"
       },
       {
-        title: "Retail Digital Transformation",
-        description: "Created omnichannel strategy connecting physical stores with digital shopping experiences.",
-        result: "35% increase in customer lifetime value and 28% growth in repeat purchases."
+        title: "Healthcare Technology Roadmap",
+        description: "Created a 3-year technology roadmap for a healthcare provider.",
+        result: "Streamlined operations, reduced costs by 25%, improved patient satisfaction"
       }
-    ]
+    ],
+    illustration: <StrategyIllustration />
   }
 ];
 
 const ServicesSection = () => {
-  const [activeService, setActiveService] = useState<number>(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeService, setActiveService] = useState(0);
+  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
     const checkReveal = () => {
-      const windowHeight = window.innerHeight;
-      const revealPoint = 150;
+      const servicesElement = servicesRef.current;
+      if (!servicesElement) return;
       
-      revealElements.forEach(element => {
-        const revealTop = element.getBoundingClientRect().top;
-        
-        if (revealTop < windowHeight - revealPoint) {
-          element.classList.add('revealed');
-        }
-      });
+      const windowHeight = window.innerHeight;
+      const elementTop = servicesElement.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < windowHeight - elementVisible) {
+        servicesElement.classList.add('reveal-active');
+      }
     };
-
+    
     window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
     window.addEventListener('resize', checkReveal);
     
     return () => {
       window.removeEventListener('scroll', checkReveal);
+      window.removeEventListener('load', checkReveal);
       window.removeEventListener('resize', checkReveal);
     };
   }, []);
 
-  // Variants for animations
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+  // Handle tab click - only open the clicked tab and close others
+  const handleTabClick = (tabId: string) => {
+    if (activeTab === tabId) {
+      setActiveTab(null); // Close if already open
+    } else {
+      setActiveTab(tabId); // Open the clicked tab and close others
     }
   };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
+  
   return (
-    <section id="services" className="py-24 px-6 md:px-16">
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold reveal">Our Services</h2>
-        <p className="mt-4 max-w-2xl text-gray-400 reveal">Elevating brands through innovative digital solutions that drive results and create lasting impressions.</p>
-      </div>
+    <section id="services" className="py-24 px-6 md:px-16 relative overflow-hidden" ref={servicesRef}>
+      {/* Background decorative elements */}
+      <CircleBlob className="absolute -top-96 -right-96 text-purple-500/10" />
+      <GridPattern className="absolute inset-0 opacity-5" />
+      <FloatingShapes className="absolute inset-0" />
       
-      {/* Services Tabs Navigation */}
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/3">
-          <motion.div 
-            className="space-y-4 sticky top-24"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 relative">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30"
           >
-            {services.map((service, index) => (
-              <motion.div 
-                key={index}
-                variants={itemVariants}
-                className={`cursor-pointer border-l-4 pl-4 py-4 transition-all duration-300 ${activeService === index ? 'border-purple-500 bg-purple-500/10' : 'border-gray-800 hover:border-purple-500/50 hover:bg-purple-500/5'}`}
-                onClick={() => setActiveService(index)}
-              >
-                <div className="flex items-center gap-3">
-                  {service.icon}
-                  <h3 className="text-xl font-medium">{service.title}</h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-400">{service.shortDescription}</p>
-              </motion.div>
-            ))}
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-4 h-4" />
+              Our Expertise
+            </span>
           </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+          >
+            Our Services
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl text-gray-400 max-w-3xl mx-auto"
+          >
+            We combine strategic thinking with technical expertise to deliver solutions 
+            that drive business growth and digital transformation.
+          </motion.p>
+          
+          <Sparkle className="absolute top-0 right-1/4 text-purple-500" />
         </div>
         
-        {/* Active Service Details */}
-        <div className="md:w-2/3">
-          <motion.div 
-            key={activeService}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 md:p-12 overflow-hidden relative"
-          >
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <div className="md:w-3/5 z-10">
-                <h3 className="text-3xl font-bold mb-4">{services[activeService].title}</h3>
-                <p className="text-gray-300 mb-8">{services[activeService].fullDescription}</p>
-                
-                <h4 className="text-xl font-semibold mb-4">Key Features</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  {services[activeService].features.map((feature, idx) => (
-                    <div key={idx} className="flex gap-4">
-                      <div className="mt-1">
-                        {feature.icon}
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-white">{feature.title}</h5>
-                        <p className="text-sm text-gray-400">{feature.description}</p>
-                      </div>
-                    </div>
-                  ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`relative group cursor-pointer rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-purple-500/30 ${activeService === index ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30' : 'bg-gray-900/20 backdrop-blur-sm'}`}
+              onClick={() => setActiveService(index)}
+            >
+              <div className="p-6">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${activeService === index ? 'bg-purple-500/20' : 'bg-gray-800'}`}>
+                  {service.icon}
                 </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{service.shortDescription}</p>
+                <div className="flex items-center text-sm font-medium text-purple-400">
+                  <span>Learn more</span>
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+              
+              {/* Hover effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Active indicator */}
+              {activeService === index && (
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl overflow-hidden bg-gray-900/30 backdrop-blur-sm border border-gray-800"
+          >
+            {/* Service tabs - accordion style */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-10">
+              <div className="lg:col-span-1">
+                <h3 className="text-2xl font-bold mb-6">{services[activeService].title}</h3>
                 
-                <h4 className="text-xl font-semibold mb-4">Our Process</h4>
-                <div className="space-y-4 mb-8">
-                  {services[activeService].processSteps.slice(0, 3).map((step, idx) => (
-                    <div key={idx} className="flex gap-4 items-start">
-                      <div className="bg-purple-500/20 text-purple-400 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-white">{step.title}</h5>
-                        <p className="text-sm text-gray-400">{step.description}</p>
-                      </div>
+                <div className="space-y-3">
+                  {services[activeService].features.map((feature, index) => (
+                    <div 
+                      key={index}
+                      className={`border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 ${activeTab === `tab-${index}` ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30' : 'hover:border-gray-700'}`}
+                    >
+                      <button 
+                        className="w-full text-left p-4 flex items-center justify-between"
+                        onClick={() => handleTabClick(`tab-${index}`)}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`p-2 rounded-lg ${activeTab === `tab-${index}` ? 'bg-purple-500/20' : 'bg-gray-800'}`}>
+                            {feature.icon}
+                          </div>
+                          <span className="font-medium">{feature.title}</span>
+                        </div>
+                        <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${activeTab === `tab-${index}` ? 'rotate-90' : ''}`} />
+                      </button>
+                      
+                      {activeTab === `tab-${index}` && (
+                        <div className="p-4 pt-0 text-gray-400 text-sm border-t border-gray-800">
+                          {feature.description}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
                 
                 <Link href={`/services/${services[activeService].id}`}>
-                  <Button className="group">
-                    <span>Explore {services[activeService].title}</span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <Button className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 mt-6 w-full">
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
+                    <span className="relative flex items-center justify-center">Explore {services[activeService].title} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
                   </Button>
                 </Link>
               </div>
               
-              <div className="md:w-2/5">
-                <div className="rounded-xl overflow-hidden">
-                  <img 
-                    src={services[activeService].image} 
-                    alt={services[activeService].title} 
-                    className="w-full h-64 md:h-[400px] object-cover"
-                  />
-                </div>
-                
-                <div className="mt-6 bg-gray-800/50 rounded-xl p-6">
-                  <h4 className="text-lg font-medium mb-3">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {services[activeService].techStack.slice(0, 6).map((tech, idx) => (
-                      <span key={idx} className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                    {services[activeService].techStack.length > 6 && (
-                      <span className="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full">
-                        +{services[activeService].techStack.length - 6} more
-                      </span>
-                    )}
+              <div className="lg:col-span-2">
+                <div className="rounded-xl overflow-hidden relative group h-full">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative h-full flex flex-col">
+                    <div className="flex-grow">
+                      {services[activeService].illustration}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-xl"></div>
+                    </div>
+                    
+                    <div className="relative z-10 p-6 bg-gray-900/80 backdrop-blur-md">
+                      <h4 className="text-lg font-medium mb-3">Key Benefits</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {services[activeService].benefits.slice(0, 4).map((benefit, idx) => (
+                          <div key={idx} className="flex items-start gap-2 text-sm group">
+                            <div className="mt-1 text-purple-400 group-hover:text-purple-300 transition-colors">•</div>
+                            <span className="text-gray-300 group-hover:text-white transition-colors">{benefit}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <div className="mt-4 pt-4 border-t border-gray-800">
+                        <h4 className="text-lg font-medium mb-3">Technologies</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {services[activeService].techStack.slice(0, 5).map((tech, idx) => (
+                            <span key={idx} className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full border border-gray-700 hover:bg-gray-700 transition-colors">
+                              {tech}
+                            </span>
+                          ))}
+                          {services[activeService].techStack.length > 5 && (
+                            <span className="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full border border-purple-500/30">
+                              +{services[activeService].techStack.length - 5} more
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <GlowingSphere className="absolute -bottom-6 -right-6" size="w-16 h-16" />
                   </div>
-                </div>
-                
-                <div className="mt-6 bg-purple-900/20 border border-purple-500/20 rounded-xl p-6">
-                  <h4 className="text-lg font-medium mb-3 text-purple-300">Results We Deliver</h4>
-                  <ul className="space-y-2">
-                    {services[activeService].benefits.slice(0, 3).map((benefit, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-purple-400 mt-1">•</span>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
             
             {/* Background decorative elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-purple-500/5 via-blue-500/5 to-transparent opacity-80 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
           </motion.div>
         </div>
       </div>

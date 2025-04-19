@@ -7,7 +7,9 @@ import {
   Monitor, 
   Rocket, 
   BarChart3, 
-  ArrowRight
+  ArrowRight,
+  CheckCircle2,
+  Zap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -25,6 +27,7 @@ const phases = [
       "Content strategy",
       "Project roadmap planning"
     ],
+    details: "Our strategic planning phase involves stakeholder interviews, market research, and data analysis to establish clear project objectives and success metrics.",
     color: "purple"
   },
   {
@@ -39,6 +42,7 @@ const phases = [
       "Visual design & branding",
       "User testing & feedback"
     ],
+    details: "Using Figma and Adobe Creative Suite, we create responsive designs with accessibility in mind. Our iterative process includes user testing to validate design decisions.",
     color: "indigo"
   },
   {
@@ -47,12 +51,13 @@ const phases = [
     icon: <Code className="w-6 h-6" />,
     description: "We build robust, scalable solutions using modern technologies and best practices.",
     items: [
-      "Frontend development",
-      "Backend architecture",
-      "Database design",
-      "API development",
-      "Integration with third-party services"
+      "Frontend development (React, Next.js)",
+      "Backend architecture (Node.js, Express)",
+      "Database design (SQL, NoSQL)",
+      "RESTful & GraphQL API development",
+      "Microservices & serverless architecture"
     ],
+    details: "Our development team follows Agile methodologies with two-week sprints. We use Git for version control, implement CI/CD pipelines, and conduct regular code reviews to maintain quality.",
     color: "blue"
   },
   {
@@ -61,12 +66,13 @@ const phases = [
     icon: <Layers className="w-6 h-6" />,
     description: "We ensure your product is reliable, secure, and delivers a seamless user experience.",
     items: [
-      "Functional testing",
-      "Cross-browser & device testing",
-      "Performance optimization",
-      "Security testing",
+      "Automated unit & integration testing",
+      "Cross-browser & device compatibility",
+      "Performance optimization & load testing",
+      "Security vulnerability assessment",
       "User acceptance testing"
     ],
+    details: "We implement Jest for unit tests, Cypress for E2E testing, and use tools like Lighthouse and WebPageTest to optimize performance. Security audits include OWASP compliance checks.",
     color: "green"
   },
   {
@@ -75,12 +81,13 @@ const phases = [
     icon: <Rocket className="w-6 h-6" />,
     description: "We launch your product with precision, ensuring a smooth transition to production.",
     items: [
-      "Infrastructure setup",
-      "Continuous integration",
-      "Server configuration",
-      "Performance monitoring",
-      "Launch execution"
+      "Infrastructure setup (AWS, GCP, Azure)",
+      "Continuous integration & deployment",
+      "Docker containerization & Kubernetes",
+      "Performance monitoring & logging",
+      "Zero-downtime deployment strategies"
     ],
+    details: "Our DevOps practices include infrastructure as code using Terraform, containerization with Docker, and monitoring with tools like New Relic or Datadog to ensure optimal performance.",
     color: "yellow"
   },
   {
@@ -89,12 +96,13 @@ const phases = [
     icon: <BarChart3 className="w-6 h-6" />,
     description: "We help you scale your product, optimize user engagement, and drive business growth.",
     items: [
-      "Analytics implementation",
-      "Performance tracking",
-      "Conversion optimization",
-      "Feature enhancement",
-      "Scaling strategies"
+      "Analytics implementation (Google Analytics, Mixpanel)",
+      "A/B testing & conversion optimization",
+      "Performance fine-tuning & scaling",
+      "Feature enhancement roadmapping",
+      "Ongoing maintenance & support"
     ],
+    details: "Post-launch, we implement data-driven strategies to improve user engagement, optimize conversion rates, and scale your application as your user base grows.",
     color: "orange"
   }
 ];
@@ -110,15 +118,32 @@ const ProcessSection = () => {
   };
 
   return (
-    <section id="process" className="py-24 px-6 md:px-16">
+    <section id="process" className="py-24 px-6 md:px-16 relative">
+      {/* Background decorative elements */}
+      <div className="absolute top-40 -left-64 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-40 -right-64 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 border border-blue-500/30"
+          >
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-4 h-4" />
+              Our Methodology
+            </span>
+          </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
           >
             Our Development Process
           </motion.h2>
@@ -137,7 +162,7 @@ const ProcessSection = () => {
         {/* Process Timeline */}
         <div className="relative mb-24">
           {/* Vertical timeline line */}
-          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-gray-800 transform md:translate-x-[-50%]"></div>
+          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500/50 via-blue-500/50 to-green-500/50 transform md:translate-x-[-50%]"></div>
           
           {phases.map((phase, index) => (
             <motion.div 
@@ -157,7 +182,7 @@ const ProcessSection = () => {
               
               {/* Content box */}
               <div className="md:w-1/2 ml-12 md:ml-0 md:px-8">
-                <div className={`border rounded-xl p-6 ${
+                <div className={`border rounded-xl p-6 backdrop-blur-sm hover:shadow-lg hover:shadow-${phase.color.split('-')[0]}-500/10 transition-all duration-300 ${
                   colors[phase.color as keyof typeof colors]
                 }`}>
                   <div className="flex items-center gap-3 mb-4">
@@ -169,14 +194,18 @@ const ProcessSection = () => {
                   
                   <p className="mb-6 text-gray-300">{phase.description}</p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-6">
                     {phase.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="mt-1">•</span>
+                        <CheckCircle2 className="w-4 h-4 mt-1 flex-shrink-0 text-blue-400" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
+                  
+                  <div className="mt-4 pt-4 border-t border-gray-800">
+                    <p className="text-sm text-gray-400 italic">{phase.details}</p>
+                  </div>
                 </div>
               </div>
               
@@ -193,15 +222,15 @@ const ProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-12 px-8 bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-2xl"
+            className="py-12 px-8 bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-2xl backdrop-blur-sm"
           >
-            <h3 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
+            <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">Ready to Start Your Project?</h3>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Let's discuss how our proven process can help bring your vision to life. 
               Our team is ready to guide you through each step of the journey.
             </p>
             <Link href="/#contact">
-              <Button size="lg" className="group">
+              <Button size="lg" className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
                 <span>Get Started</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

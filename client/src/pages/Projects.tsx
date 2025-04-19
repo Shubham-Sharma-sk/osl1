@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink, Clock, Calendar, User, Tag, Plus, ChevronsRight } from "lucide-react";
+import { CircleBlob, GridPattern } from "@/components/ui/decorative-elements";
 
 // Project types
 interface ProjectFeature {

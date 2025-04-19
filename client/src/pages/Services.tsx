@@ -4,8 +4,9 @@ import { Link } from "wouter";
 import { services } from "@/components/ServicesSection";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ChevronRight, ArrowRight, ExternalLink, Layers, Code, Flag, Users, BarChart3, Zap } from "lucide-react";
+import { ChevronRight, ArrowRight, ExternalLink, Layers, Code, Flag, Users, BrainCircuit, MessageSquareText, LineChart, BarChart3, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CircleBlob, GridPattern } from "@/components/ui/decorative-elements";
 
 // Service categories
 const serviceCategories = [
@@ -17,18 +18,32 @@ const serviceCategories = [
     items: ["Market Research", "Digital Strategy", "Brand Positioning", "User Research", "Content Strategy"]
   },
   {
-    id: "design",
-    title: "Design",
-    icon: <Layers className="h-6 w-6 text-purple-400" />,
-    description: "Create intuitive, beautiful, and user-centered digital experiences",
-    items: ["UX/UI Design", "Product Design", "Brand Identity", "Design Systems", "Prototyping"]
+    id: "ai-chatbot",
+    title: "AI Chatbot",
+    icon: <MessageSquareText className="h-6 w-6 text-purple-400" />,
+    description: "Intelligent conversational agents that enhance customer service",
+    items: ["Natural Language Processing", "Multi-channel Integration", "Personalized Interactions", "Analytics & Insights", "Continuous Learning"]
+  },
+  {
+    id: "ai-agent",
+    title: "AI Agent",
+    icon: <BrainCircuit className="h-6 w-6 text-purple-400" />,
+    description: "Autonomous agents that perform complex tasks with minimal human intervention",
+    items: ["Autonomous Decision Making", "Process Automation", "Data Analysis", "API Integration", "Workflow Optimization"]
   },
   {
     id: "development",
     title: "Development",
     icon: <Code className="h-6 w-6 text-purple-400" />,
     description: "Build robust, scalable, and high-performance digital solutions",
-    items: ["Web Development", "E-Commerce", "Custom Applications", "API Development", "Mobile Apps"]
+    items: ["Web Development", "Custom Applications", "API Development", "Mobile Apps", "Cloud Solutions"]
+  },
+  {
+    id: "business-planning",
+    title: "Business Planning",
+    icon: <LineChart className="h-6 w-6 text-purple-400" />,
+    description: "Strategic planning to align technology with business objectives",
+    items: ["Digital Transformation", "Technology Roadmapping", "Market Analysis", "Investment Planning", "Growth Strategy"]
   },
   {
     id: "growth",
@@ -63,8 +78,8 @@ const successMetrics = [
 const technologies = [
   "React", "Next.js", "Vue.js", "TypeScript", "Node.js", 
   "Python", "Django", "Express", "PostgreSQL", "MongoDB", 
-  "AWS", "Vercel", "Docker", "GraphQL", "Shopify", 
-  "Figma", "Adobe XD", "Webflow", "WordPress", "Tailwind CSS"
+  "AWS", "Vercel", "Docker", "GraphQL", "OpenAI GPT-4",
+  "LangChain", "TensorFlow", "PyTorch", "Kubernetes", "Tailwind CSS"
 ];
 
 const Services = () => {
@@ -73,7 +88,17 @@ const Services = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Services | OSL Strategy";
+    document.title = "OSL STRATEGY";
+
+    // Check if we have a hash in the URL to open a specific service section
+    const hash = window.location.hash;
+    if (hash) {
+      const categoryId = hash.replace('#', '');
+      const category = serviceCategories.find(cat => cat.id === categoryId);
+      if (category) {
+        setActiveCategory(categoryId);
+      }
+    }
   }, []);
 
   const staggerContainer = {
@@ -96,7 +121,11 @@ const Services = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 md:px-16">
+      <section className="pt-32 pb-20 px-6 md:px-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-transparent opacity-80 pointer-events-none"></div>
+        <CircleBlob className="absolute -top-96 -right-96 text-purple-500/10" />
+        <GridPattern className="absolute inset-0 opacity-5" />
+        
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -104,155 +133,124 @@ const Services = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">Our Services</h1>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30"
+              >
+                <span className="flex items-center gap-1.5">
+                  <Zap className="w-4 h-4" />
+                  Our Solutions
+                </span>
+              </motion.div>
+              
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">Our Services</h1>
               <p className="text-xl text-gray-400 mb-8 max-w-xl">
                 We combine strategic thinking, design excellence, and technical expertise to create digital products that drive results.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="group">
+                <Button size="lg" className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
                   <span>Start a Project</span>
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button variant="outline" size="lg">
-                  Contact Us
+                <Button size="lg" variant="outline" className="group">
+                  <span>View Our Work</span>
+                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative hidden lg:block"
+              className="grid grid-cols-2 gap-6"
             >
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-xl opacity-70"></div>
-              <div className="grid grid-cols-2 gap-4 relative z-10">
-                {serviceCategories.map((category, index) => (
-                  <div 
-                    key={index}
-                    className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-purple-500/50 transition-colors"
-                  >
-                    <div className="bg-gray-800/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                      {category.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
-                    <p className="text-sm text-gray-400">{category.description}</p>
+              {serviceCategories.slice(0, 4).map((category, index) => (
+                <motion.div
+                  key={category.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                  className={`relative group cursor-pointer rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-purple-500/30 bg-gray-900/30 backdrop-blur-sm p-6 ${activeCategory === category.id ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30' : ''}`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${activeCategory === category.id ? 'bg-purple-500/20' : 'bg-gray-800'}`}>
+                    {category.icon}
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-lg font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-400 text-sm">{category.description.split(' ').slice(0, 4).join(' ')}...</p>
+                  
+                  {/* Hover effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Active indicator */}
+                  {activeCategory === category.id && (
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                  )}
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
       
-      {/* Service Categories */}
-      <section className="py-24 px-6 md:px-16 bg-gray-900/30">
+      {/* Service Categories Section */}
+      <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-background to-gray-900/50">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Categories Sidebar */}
-            <div className="lg:w-1/4">
-              <h2 className="text-2xl font-bold mb-6">Services</h2>
-              <div className="space-y-2">
-                {serviceCategories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`w-full text-left px-5 py-4 rounded-lg transition-all flex items-center justify-between ${
-                      activeCategory === category.id
-                        ? "bg-primary/20 text-white"
-                        : "bg-gray-800/50 text-gray-300 hover:bg-gray-800"
-                    }`}
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-3">{category.icon}</div>
-                      <span>{category.title}</span>
-                    </div>
-                    <ChevronRight className={`h-5 w-5 transition-transform ${
-                      activeCategory === category.id ? "rotate-90" : ""
-                    }`} />
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            {/* Service Items */}
-            <div className="lg:w-3/4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Comprehensive Digital Services</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              From strategy to execution, we provide end-to-end solutions to help your business thrive in the digital landscape.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
               <motion.div
-                key={activeCategory}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                id={category.id}
+                className="bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-purple-500/30 group"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    {serviceCategories.find(c => c.id === activeCategory)?.icon}
+                <div className="p-8">
+                  <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-all duration-300">
+                    {category.icon}
                   </div>
-                  <h2 className="text-3xl font-bold">
-                    {serviceCategories.find(c => c.id === activeCategory)?.title}
-                  </h2>
+                  <h3 className="text-2xl font-bold mb-4">{category.title}</h3>
+                  <p className="text-gray-400 mb-6">{category.description}</p>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {category.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm group/item">
+                        <div className="mt-1 text-purple-400 group-hover/item:text-purple-300 transition-colors">•</div>
+                        <span className="text-gray-300 group-hover/item:text-white transition-colors">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Link href={`/services#${category.id}`}>
+                    <Button variant="outline" className="w-full group">
+                      <span>Learn More</span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
                 </div>
                 
-                <p className="text-xl text-gray-300 mb-12 max-w-3xl">
-                  {serviceCategories.find(c => c.id === activeCategory)?.description}
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {serviceCategories
-                    .find(c => c.id === activeCategory)
-                    ?.items.map((item, index) => {
-                      const relatedService = services.find(s => 
-                        s.title === item || s.title.includes(item) || item.includes(s.title)
-                      );
-                      
-                      return (
-                        <motion.div
-                          key={item}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.05 }}
-                          className={`group cursor-pointer border border-gray-800 rounded-xl p-6 transition-all ${
-                            selectedService === item
-                              ? "bg-primary/10 border-primary/50"
-                              : "hover:bg-gray-800/50 hover:border-gray-700"
-                          }`}
-                          onClick={() => setSelectedService(selectedService === item ? null : item)}
-                        >
-                          <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-xl font-semibold">{item}</h3>
-                            <div className="w-8 h-8 rounded-full bg-gray-800 group-hover:bg-gray-700 flex items-center justify-center">
-                              <ChevronRight className={`h-4 w-4 transition-transform ${selectedService === item ? "rotate-90" : ""}`} />
-                            </div>
-                          </div>
-                          
-                          {selectedService === item && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="mt-4 pt-4 border-t border-gray-700"
-                            >
-                              <p className="text-gray-300 mb-4">
-                                {relatedService?.shortDescription || `Our ${item} services help businesses achieve their goals through strategic implementation and expert execution.`}
-                              </p>
-                              
-                              {relatedService && (
-                                <Link href={`/services/${relatedService.id}`}>
-                                  <Button size="sm" variant="secondary" className="group">
-                                    <span>Learn more</span>
-                                    <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                                  </Button>
-                                </Link>
-                              )}
-                            </motion.div>
-                          )}
-                        </motion.div>
-                      );
-                    })}
-                </div>
+                {/* Hover gradient */}
+                <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -260,14 +258,20 @@ const Services = () => {
       {/* Success Metrics Section */}
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Proven Success</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Our data-driven approach delivers measurable results for businesses of all sizes.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Driving Real Results</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our work delivers measurable impact for our clients across industries and digital channels.
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {successMetrics.map((metric, index) => (
               <motion.div
                 key={index}
@@ -275,9 +279,9 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-900/50 border border-gray-800 rounded-xl p-8 text-center"
+                className="bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-xl p-8 text-center hover:border-purple-500/30 transition-all duration-300"
               >
-                <div className="text-5xl font-bold text-primary mb-3">{metric.number}</div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">{metric.number}</h3>
                 <p className="text-gray-300">{metric.text}</p>
               </motion.div>
             ))}
@@ -286,29 +290,47 @@ const Services = () => {
       </section>
       
       {/* Technologies Section */}
-      <section className="py-24 px-6 md:px-16 bg-gray-900/30">
+      <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-gray-900/50 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Technologies We Use</h2>
-              <p className="text-xl text-gray-400 mb-8">
-                We leverage the latest technologies to build scalable, high-performance digital solutions.
-              </p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-5xl font-bold mb-6"
+              >
+                Technologies We Use
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-xl text-gray-400 mb-8"
+              >
+                We leverage cutting-edge technologies to build scalable, robust, and future-proof solutions for our clients.
+              </motion.p>
               
-              <div className="flex flex-wrap gap-3">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3"
+              >
                 {technologies.map((tech, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.02 }}
+                    variants={staggerItem}
+                    whileHover={{ scale: 1.05 }}
                     className="bg-gray-800 border border-gray-700 px-4 py-2 rounded-full text-sm"
                   >
                     {tech}
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
             
             <motion.div
@@ -319,8 +341,8 @@ const Services = () => {
               className="bg-gray-900/70 border border-gray-800 rounded-xl p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-purple-400" />
                 </div>
                 <h3 className="text-2xl font-bold">Expertise That Matters</h3>
               </div>
@@ -332,29 +354,29 @@ const Services = () => {
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
-                  <div className="mt-1 text-primary">•</div>
+                  <div className="mt-1 text-purple-400">•</div>
                   <div>
                     <span className="font-medium">Advanced Frameworks</span>
                     <p className="text-sm text-gray-400">Building with React, Vue, and other modern frameworks for optimal performance</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="mt-1 text-primary">•</div>
+                  <div className="mt-1 text-purple-400">•</div>
+                  <div>
+                    <span className="font-medium">AI & Machine Learning</span>
+                    <p className="text-sm text-gray-400">Implementing cutting-edge AI solutions using GPT-4, LangChain, and custom ML models</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 text-purple-400">•</div>
                   <div>
                     <span className="font-medium">Cloud-Native Architecture</span>
                     <p className="text-sm text-gray-400">Leveraging AWS, Azure, and other platforms for scalable, reliable infrastructure</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1 text-primary">•</div>
-                  <div>
-                    <span className="font-medium">Design & Prototyping Tools</span>
-                    <p className="text-sm text-gray-400">Creating seamless experiences with Figma, Adobe XD, and other design platforms</p>
-                  </div>
-                </li>
               </ul>
               
-              <Button className="group w-full">
+              <Button className="group w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
                 <span>View Our Full Technology Stack</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -366,13 +388,13 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">Ready to Start Your Project?</h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Let's discuss how our services can help you achieve your business goals and create exceptional digital experiences.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group">
+            <Button size="lg" className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
               <span>Get a Quote</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>

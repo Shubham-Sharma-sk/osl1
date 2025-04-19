@@ -53,7 +53,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground cursor-none md:cursor-none overflow-x-hidden;
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
   }
 
   .reveal {
@@ -123,5 +123,31 @@
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  /* Animation keyframes */
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0); }
+  }
+
+  @keyframes float-delay {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(0); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay {
+    animation: float-delay 7s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
   }
 }

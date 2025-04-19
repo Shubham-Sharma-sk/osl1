@@ -1,44 +1,20 @@
+import { Link } from "wouter";
+
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="py-16 px-6 md:px-16 border-t border-white/20">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-2">
-            <a href="#" className="text-2xl font-bold tracking-widest mb-6 inline-block">OSL</a>
-            <p className="opacity-70 max-w-md">
-              We craft exceptional digital experiences through innovative web development, design, and strategy.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3 opacity-70">
-              <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
-              <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
-              <li><a href="#projects" className="hover:text-accent transition-colors">Projects</a></li>
-              <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="space-y-3 opacity-70">
-              <li><a href="#" className="hover:text-accent transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Digital Design</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">E-Commerce</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Digital Strategy</a></li>
-            </ul>
-          </div>
+    <footer className="w-full bg-black/90 text-white py-8 px-4 mt-16 border-t border-white/10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col items-center md:items-start">
+          <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500 mb-2">OSL</span>
+          <span className="text-sm opacity-70 mb-2">We craft exceptional digital experiences through innovative web development, design, and strategy.</span>
+          <span className="text-xs bg-gradient-to-r from-purple-700/80 to-blue-800/80 px-3 py-1 rounded-md mt-2">25 RUE des Bas, 92600 Asnières-sur-Seine, FRANCE</span>
         </div>
-        
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="opacity-60 mb-4 md:mb-0">© {currentYear} OSL. All rights reserved.</p>
+        <div className="flex flex-col items-center md:items-end gap-2">
+          <span className="text-xs opacity-60">&copy; {new Date().getFullYear()} OSL. All rights reserved.</span>
           <div className="flex space-x-6">
-            <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">Privacy Policy</a>
-            <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">Terms of Service</a>
-            <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">Cookies</a>
+            <Link href="/privacy-policy" className="opacity-60 hover:opacity-100 transition-opacity">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="opacity-60 hover:opacity-100 transition-opacity">Terms and Conditions</Link>
+            <Link href="/cookies-policy" className="opacity-60 hover:opacity-100 transition-opacity">Cookies Policy</Link>
           </div>
         </div>
       </div>

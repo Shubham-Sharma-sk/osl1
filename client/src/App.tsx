@@ -1,23 +1,30 @@
 import { useEffect } from "react";
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
+import { queryClient } from "@/lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import ServiceDetail from "@/pages/ServiceDetail";
-import CustomCursor from "@/components/CustomCursor";
+import Contact from "@/pages/Contact";
 import ThemeToggle from "@/components/ThemeToggle";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsAndConditions from "@/pages/TermsAndConditions";
+import CookiesPolicy from "@/pages/CookiesPolicy";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/home" component={Home} />
       <Route path="/services" component={Services} />
       <Route path="/services/:id" component={ServiceDetail} />
       <Route path="/projects" component={Projects} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-and-conditions" component={TermsAndConditions} />
+      <Route path="/cookies-policy" component={CookiesPolicy} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -44,9 +51,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="transition-colors duration-300">
         <Router />
-        <CustomCursor />
         <ThemeToggle />
-        <Toaster />
       </div>
     </QueryClientProvider>
   );
