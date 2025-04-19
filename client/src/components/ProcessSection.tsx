@@ -216,7 +216,7 @@ const ProcessSection = () => {
         </div>
         
         {/* Call to action */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ const ProcessSection = () => {
               </Button>
             </Link>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

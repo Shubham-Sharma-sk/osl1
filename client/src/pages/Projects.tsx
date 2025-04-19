@@ -592,7 +592,7 @@ const Projects = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-gray-900 to-black">
+      {/* <section className="py-24 px-6 md:px-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -609,7 +609,7 @@ const Projects = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
       
       <Footer />
     </div>

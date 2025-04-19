@@ -51,56 +51,12 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           {/* <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal">About Our Agency</h2> */}
           <p className="text-xl max-w-3xl mx-auto opacity-80 reveal">
-            We're a team of passionate designers, developers, and strategists who are dedicated to creating exceptional digital experiences.
+            We're a digital agency of who can provide you with the best possible results.
           </p>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Text */}
-          <div className="space-y-6 reveal">
-            <h3 className="text-2xl md:text-4xl font-bold mb-6">Who We Are</h3>
-            <p className="text-lg opacity-80 mb-8">
-              Founded in 2025, OSL Strategy  has grown from a small startup to a full-service digital agency. 
-              We specialize in creating beautiful, functional websites and applications that help businesses grow 
-              and succeed in the digital landscape.
-            </p>
-          </div>
-
-          {/* Right: Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
-            {[
-              {
-                icon: <Users className="w-6 h-6 text-white" />,
-                title: "Expert Team",
-                text: "Our diverse team brings expertise across all digital disciplines."
-              },
-              {
-                icon: <Code className="w-6 h-6 text-white" />,
-                title: "Clean Code",
-                text: "We write maintainable, efficient code that scales with your business."
-              },
-              {
-                icon: <Zap className="w-6 h-6 text-white" />,
-                title: "Fast Delivery",
-                text: "We work efficiently to deliver projects on time and within budget."
-              },
-              {
-                icon: <Award className="w-6 h-6 text-white" />,
-                title: "Award Winning",
-                text: "Our work has been recognized with multiple industry awards."
-              }
-            ].map(({ icon, title, text }) => (
-              <div key={title} className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-purple-500/50 transition-colors">
-                <div className="bg-gradient-to-br from-purple-600 to-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                  {icon}
-                </div>
-                <h4 className="text-xl font-semibold mb-2">{title}</h4>
-                <p className="opacity-80">{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+       
+        
       </div>
     </section>
   );

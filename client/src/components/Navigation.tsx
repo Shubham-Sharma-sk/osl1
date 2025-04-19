@@ -11,22 +11,29 @@ const Navigation = () => {
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      let current = "home";
+    // If on homepage, highlight based on scroll; otherwise, highlight based on route
+    if (location === "/" || location === "/home") {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        let current = "home";
 
-      for (let id of sections) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop - 100 <= scrollY) {
-          current = id;
+        for (let id of sections) {
+          const el = document.getElementById(id);
+          if (el && el.offsetTop - 100 <= scrollY) {
+            current = id;
+          }
         }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+        setActiveSection(current);
+      };
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      // Highlight the section that matches the route (e.g., /contact -> contact)
+      const match = sections.find(sec => location.replace("/", "") === sec);
+      setActiveSection(match || "");
+    }
+  }, [location]);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
@@ -35,46 +42,29 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex">
             <div className="bg-black/80 backdrop-blur-md border border-gray-800 rounded-full px-4 py-2 flex items-center space-x-1">
-              {sections.map((section) =>
-                section === "home" ? (
-                  <a
-                    key="home"
-                    href="#home"
-                    onClick={(e) => {
-                      if (location === "/") {
-                        e.preventDefault();
-                        document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        e.preventDefault();
-                        setLocation("/");
-                        setTimeout(() => {
-                          document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-                        }, 100);
-                      }
-                    }}
-                    className={`relative px-4 py-2 rounded-full flex items-center font-medium transition-colors ${
-                      activeSection === "home"
-                        ? "text-white bg-gradient-to-r from-purple-600 to-blue-600"
-                        : "text-white/80 hover:bg-white/10"
-                    }`}
-                  >
-                    <Home className="w-4 h-4 mr-2" />
-                    <span className="capitalize">Home</span>
-                  </a>
-                ) : (
-                  <a
-                    key={section}
-                    href={`#${section}`}
-                    className={`relative px-4 py-2 rounded-full flex items-center font-medium transition-colors ${
-                      activeSection === section
-                        ? "text-white bg-gradient-to-r from-purple-600 to-blue-600"
-                        : "text-white/80 hover:bg-white/10"
-                    }`}
-                  >
-                    <span className="capitalize">{section}</span>
-                  </a>
-                )
-              )}
+              {sections.map((section) => (
+                <a
+                  key={section}
+                  href={`#${section}`}
+                  onClick={(e) => {
+                    if (location === "/" || location === "/home") {
+                      e.preventDefault();
+                      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      e.preventDefault();
+                      setLocation(section === "home" ? "/" : `/${section}`);
+                    }
+                  }}
+                  className={`relative px-4 py-2 rounded-full flex items-center font-medium transition-colors ${
+                    activeSection === section
+                      ? "text-white bg-gradient-to-r from-purple-600 to-blue-600"
+                      : "text-white/80 hover:bg-white/10"
+                  }`}
+                >
+                  {section === "home" && <Home className="w-4 h-4 mr-2" />}
+                  <span className="capitalize">{section}</span>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -93,38 +83,25 @@ const Navigation = () => {
             isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          {sections.map((section) =>
-            section === "home" ? (
-              <a
-                key="home"
-                href="#home"
-                onClick={(e) => {
-                  if (location === "/") {
-                    e.preventDefault();
-                    document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    e.preventDefault();
-                    setLocation("/");
-                    setTimeout(() => {
-                      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
-                  }
-                }}
-                className="text-2xl font-medium text-white hover:text-purple-500 transition"
-              >
-                Home
-              </a>
-            ) : (
-              <a
-                key={section}
-                href={`#${section}`}
-                onClick={() => setIsOpen(false)}
-                className="text-2xl font-medium text-white hover:text-purple-500 transition"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            )
-          )}
+          {sections.map((section) => (
+            <a
+              key={section}
+              href={`#${section}`}
+              onClick={(e) => {
+                if (location === "/" || location === "/home") {
+                  e.preventDefault();
+                  document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  e.preventDefault();
+                  setLocation(section === "home" ? "/" : `/${section}`);
+                }
+                setIsOpen(false);
+              }}
+              className="text-2xl font-medium text-white hover:text-purple-500 transition"
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          ))}
         </div>
       </div>
     </header>
