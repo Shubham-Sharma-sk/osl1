@@ -40,7 +40,7 @@ const Footer = () => {
             <h3 className="font-bold text-gray-900 dark:text-white mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/#services" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/services" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   Services
                 </Link>
               </li>
@@ -50,8 +50,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Projects
                 </Link>
               </li>
             </ul>
@@ -70,7 +75,7 @@ const Footer = () => {
                   <span>contact@oslstrategy.com</span>
                 </a>
               </li>
-              <li className="flex space-x-4">
+              {/* <li className="flex space-x-4">
                 <a 
                   href="#" 
                   className="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
@@ -92,7 +97,7 @@ const Footer = () => {
                 >
                   <Github className="w-5 h-5" />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

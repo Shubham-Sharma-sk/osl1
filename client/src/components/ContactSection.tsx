@@ -58,7 +58,7 @@ const ContactSection = () => {
             Sales Inquiries:
           </p>
           <a href="mailto:Sales@oslstrategy.com" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300 flex items-center gap-1 font-medium">
-            Sales@oslstrategy.com
+            sales@oslstrategy.com
             <ExternalLink className="w-3 h-3" />
           </a>
         </motion.div>
