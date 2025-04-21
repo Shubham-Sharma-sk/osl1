@@ -1,15 +1,7 @@
 import { motion } from "framer-motion";
-import { 
-  Lightbulb, 
-  Compass, 
-  Code, 
-  Layers, 
-  Monitor, 
-  Rocket, 
-  BarChart3, 
-  ArrowRight,
-  CheckCircle2,
-  Zap
+import {
+  Lightbulb, Compass, Code, Layers,
+  Rocket, BarChart3, CheckCircle2, Zap, ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -107,22 +99,22 @@ const phases = [
   }
 ];
 
-const ProcessSection = () => {
-  const colors = {
-    purple: "bg-purple-500/10 text-purple-400 border-purple-500/30",
-    indigo: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
-    blue: "bg-blue-500/10 text-blue-400 border-blue-500/30",
-    green: "bg-green-500/10 text-green-400 border-green-500/30",
-    yellow: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30",
-    orange: "bg-orange-500/10 text-orange-400 border-orange-500/30"
-  };
+const colors = {
+  purple: "bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/30",
+  indigo: "bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/30",
+  blue: "bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/30",
+  green: "bg-green-100 text-green-700 border-green-200 dark:bg-green-500/10 dark:text-green-400 dark:border-green-500/30",
+  yellow: "bg-yellow-100 text-yellow-700 border-yellow-200 dark:bg-yellow-500/10 dark:text-yellow-400 dark:border-yellow-500/30",
+  orange: "bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-500/10 dark:text-orange-400 dark:border-orange-500/30"
+};
 
+const ProcessSection = () => {
   return (
-    <section id="process" className="py-24 px-6 md:px-16 relative">
+    <section id="process" className="py-24 px-6 md:px-16 bg-white text-gray-900 dark:bg-[#0e0e16] dark:text-white transition-colors duration-300 relative">
       {/* Background decorative elements */}
-      <div className="absolute top-40 -left-64 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-40 -right-64 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      
+      <div className="absolute top-40 -left-64 w-96 h-96 bg-purple-300 dark:bg-purple-500/20 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-40 -right-64 w-96 h-96 bg-blue-300 dark:bg-blue-500/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.div
@@ -130,29 +122,27 @@ const ProcessSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 border border-blue-500/30"
+            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium border border-blue-300 dark:border-blue-500/30 bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400"
           >
             <span className="flex items-center gap-1.5">
               <Zap className="w-4 h-4" />
               Our Methodology
             </span>
           </motion.div>
-          
+
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+            className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
           >
             Our Development Process
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
           >
             We follow a systematic approach to transform your vision into reality, 
             ensuring quality, efficiency, and success at every stage.
@@ -162,8 +152,8 @@ const ProcessSection = () => {
         {/* Process Timeline */}
         <div className="relative mb-24">
           {/* Vertical timeline line */}
-          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500/50 via-blue-500/50 to-green-500/50 transform md:translate-x-[-50%]"></div>
-          
+          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-blue-400 to-green-400 dark:from-purple-500/50 dark:via-blue-500/50 dark:to-green-500/50 transform md:translate-x-[-50%]"></div>
+
           {phases.map((phase, index) => (
             <motion.div 
               key={phase.id}
@@ -171,72 +161,44 @@ const ProcessSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative flex flex-col md:flex-row mb-16 last:mb-0 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              className={`relative flex flex-col md:flex-row mb-16 last:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Timeline circle */}
-              <div className="absolute left-0 md:left-1/2 top-0 w-8 h-8 bg-gray-900 border-4 border-gray-800 rounded-full flex items-center justify-center transform md:translate-x-[-50%] z-10">
-                <span className="text-xs font-bold">{phase.id}</span>
+              <div className="absolute left-0 md:left-1/2 top-0 w-8 h-8 bg-white dark:bg-gray-900 border-4 border-gray-300 dark:border-gray-800 rounded-full flex items-center justify-center transform md:translate-x-[-50%] z-10">
+                <span className="text-xs font-bold text-gray-800 dark:text-white">{phase.id}</span>
               </div>
-              
+
               {/* Content box */}
               <div className="md:w-1/2 ml-12 md:ml-0 md:px-8">
-                <div className={`border rounded-xl p-6 backdrop-blur-sm hover:shadow-lg hover:shadow-${phase.color.split('-')[0]}-500/10 transition-all duration-300 ${
-                  colors[phase.color as keyof typeof colors]
-                }`}>
+                <div className={`border rounded-xl p-6 backdrop-blur-sm transition-all duration-300 ${colors[phase.color as keyof typeof colors]}`}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="bg-background/50 p-2 rounded-lg">
+                    <div className="bg-white dark:bg-background/50 p-2 rounded-lg">
                       {phase.icon}
                     </div>
                     <h3 className="text-2xl font-bold">{phase.title}</h3>
                   </div>
-                  
-                  <p className="mb-6 text-gray-300">{phase.description}</p>
-                  
+
+                  <p className="mb-6 text-gray-700 dark:text-gray-300">{phase.description}</p>
+
                   <ul className="space-y-2 mb-6">
                     {phase.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 mt-1 flex-shrink-0 text-blue-400" />
+                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                        <CheckCircle2 className="w-4 h-4 mt-1 flex-shrink-0 text-blue-500 dark:text-blue-400" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                  
-                  <div className="mt-4 pt-4 border-t border-gray-800">
-                    <p className="text-sm text-gray-400 italic">{phase.details}</p>
+
+                  <div className="mt-4 pt-4 border-t border-gray-300 dark:border-gray-800">
+                    <p className="text-sm italic text-gray-600 dark:text-gray-400">{phase.details}</p>
                   </div>
                 </div>
               </div>
-              
-              {/* Empty space for alignment */}
+
               <div className="hidden md:block md:w-1/2"></div>
             </motion.div>
           ))}
         </div>
-        
-        {/* Call to action */}
-        {/* <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="py-12 px-8 bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/20 rounded-2xl backdrop-blur-sm"
-          >
-            <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">Ready to Start Your Project?</h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Let's discuss how our proven process can help bring your vision to life. 
-              Our team is ready to guide you through each step of the journey.
-            </p>
-            <Link href="/#contact">
-              <Button size="lg" className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
-                <span>Get Started</span>
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div> */}
       </div>
     </section>
   );

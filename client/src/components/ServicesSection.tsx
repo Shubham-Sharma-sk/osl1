@@ -39,27 +39,27 @@ export const services: Service[] = [
     title: "Web Development",
     shortDescription: "Creating powerful, responsive websites and web applications with cutting-edge technologies.",
     fullDescription: "Our web development services combine technical excellence with creative design to deliver websites and web applications that not only look stunning but perform flawlessly. We build with scalability and future growth in mind, ensuring your digital presence can evolve as your business does.",
-    icon: <Code className="h-8 w-8 text-purple-400" />,
+    icon: <Code className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
     features: [
       {
         title: "Custom Web Applications",
         description: "Tailored solutions that address your unique business challenges and transform your operations.",
-        icon: <Layers className="h-6 w-6 text-purple-400" />
+        icon: <Layers className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Progressive Web Apps",
         description: "App-like experiences that work offline, load instantly, and don't require installation.",
-        icon: <Zap className="h-6 w-6 text-purple-400" />
+        icon: <Zap className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Frontend & Backend Development",
         description: "End-to-end development with modern frameworks to create seamless, high-performance websites.",
-        icon: <Code className="h-6 w-6 text-purple-400" />
+        icon: <Code className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "CMS Implementation",
         description: "Powerful content management systems that give you complete control over your digital content.",
-        icon: <PenTool className="h-6 w-6 text-purple-400" />
+        icon: <PenTool className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       }
     ],
     benefits: [
@@ -113,27 +113,27 @@ export const services: Service[] = [
     title: "AI Chatbot",
     shortDescription: "Intelligent conversational agents that enhance customer service and streamline operations.",
     fullDescription: "Our AI chatbots leverage natural language processing and machine learning to provide intelligent, human-like interactions. We design and develop custom chatbot solutions that can handle customer inquiries, automate routine tasks, and provide 24/7 support for your business.",
-    icon: <MessageSquareText className="h-8 w-8 text-purple-400" />,
+    icon: <MessageSquareText className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
     features: [
       {
         title: "Natural Language Processing",
         description: "Advanced NLP capabilities for understanding and responding to human language naturally.",
-        icon: <BrainCircuit className="h-6 w-6 text-purple-400" />
+        icon: <BrainCircuit className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Multi-channel Integration",
         description: "Seamless integration with websites, mobile apps, messaging platforms, and social media.",
-        icon: <Layers className="h-6 w-6 text-purple-400" />
+        icon: <Layers className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Personalized Interactions",
         description: "AI-driven personalization that adapts to user preferences and conversation history.",
-        icon: <Cpu className="h-6 w-6 text-purple-400" />
+        icon: <Cpu className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Analytics & Insights",
         description: "Comprehensive analytics to track performance and gain insights from customer interactions.",
-        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
+        icon: <BarChart3 className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       }
     ],
     benefits: [
@@ -187,27 +187,27 @@ export const services: Service[] = [
     title: "AI Agent",
     shortDescription: "Autonomous AI agents that perform complex tasks and workflows with minimal human intervention.",
     fullDescription: "Our AI agents go beyond chatbots to provide autonomous decision-making and task execution. These intelligent systems can handle complex workflows, data analysis, and process automation, allowing your team to focus on high-value activities that require human creativity and judgment.",
-    icon: <BrainCircuit className="h-8 w-8 text-purple-400" />,
+    icon: <BrainCircuit className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
     features: [
       {
         title: "Autonomous Decision Making",
         description: "AI systems that can make decisions based on complex criteria and business rules.",
-        icon: <Cpu className="h-6 w-6 text-purple-400" />
+        icon: <Cpu className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Process Automation",
         description: "End-to-end automation of complex business processes and workflows.",
-        icon: <Rocket className="h-6 w-6 text-purple-400" />
+        icon: <Rocket className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Data Analysis & Insights",
         description: "Advanced analytics capabilities to process large datasets and extract actionable insights.",
-        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
+        icon: <BarChart3 className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "API & System Integration",
         description: "Seamless integration with your existing software ecosystem and third-party services.",
-        icon: <Code className="h-6 w-6 text-purple-400" />
+        icon: <Code className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       }
     ],
     benefits: [
@@ -261,27 +261,27 @@ export const services: Service[] = [
     title: "Business Planning",
     shortDescription: "Strategic planning and roadmapping to align your technology investments with business objectives.",
     fullDescription: "Our business planning services help organizations develop clear, actionable strategies for digital transformation and growth. We work closely with your leadership team to understand your business goals, market position, and competitive landscape, then create comprehensive plans to achieve your objectives.",
-    icon: <LineChart className="h-8 w-8 text-purple-400" />,
+    icon: <LineChart className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
     features: [
       {
         title: "Digital Transformation Strategy",
         description: "Comprehensive strategies to leverage technology for business growth and innovation.",
-        icon: <Rocket className="h-6 w-6 text-purple-400" />
+        icon: <Rocket className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Technology Roadmapping",
         description: "Detailed technology roadmaps aligned with your business objectives and timeline.",
-        icon: <LineChart className="h-6 w-6 text-purple-400" />
+        icon: <LineChart className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Market & Competitive Analysis",
         description: "In-depth analysis of market trends, customer needs, and competitive landscape.",
-        icon: <BarChart3 className="h-6 w-6 text-purple-400" />
+        icon: <BarChart3 className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Investment Planning",
         description: "Strategic planning for technology investments to maximize ROI and business impact.",
-        icon: <Layers className="h-6 w-6 text-purple-400" />
+        icon: <Layers className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       }
     ],
     benefits: [
@@ -372,9 +372,9 @@ const ServicesSection = () => {
   };
   
   return (
-    <section id="services" className="py-24 px-6 md:px-16 relative overflow-hidden" ref={servicesRef}>
+    <section id="services" className="py-24 px-6 md:px-16 relative overflow-hidden bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200" ref={servicesRef}>
       {/* Background decorative elements */}
-      <CircleBlob className="absolute -top-96 -right-96 text-purple-500/10" />
+      <CircleBlob className="absolute -top-96 -right-96 text-indigo-500/10" />
       <GridPattern className="absolute inset-0 opacity-5" />
       <FloatingShapes className="absolute inset-0" />
       
@@ -385,7 +385,7 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30"
+            className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/50"
           >
             <span className="flex items-center gap-1.5">
               <Zap className="w-4 h-4" />
@@ -398,7 +398,7 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+            className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
           >
             Our Services
           </motion.h2>
@@ -407,13 +407,13 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
           >
             We combine strategic thinking with technical expertise to deliver solutions 
             that drive business growth and digital transformation.
           </motion.p>
           
-          <Sparkle className="absolute top-0 right-1/4 text-purple-500" />
+          <Sparkle className="absolute top-0 right-1/4 text-indigo-500" />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -424,27 +424,35 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative group cursor-pointer rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-purple-500/30 ${activeService === index ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30' : 'bg-gray-900/20 backdrop-blur-sm'}`}
+              className={`relative group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 ${
+                activeService === index 
+                  ? 'bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 border-indigo-200 dark:border-indigo-700/50 shadow-lg' 
+                  : 'bg-white/80 dark:bg-gray-900/50 backdrop-blur-sm border-gray-200 dark:border-gray-800 hover:border-indigo-200 dark:hover:border-indigo-700/50'
+              }`}
               onClick={() => setActiveService(index)}
             >
               <div className="p-6">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${activeService === index ? 'bg-purple-500/20' : 'bg-gray-800'}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${
+                  activeService === index 
+                    ? 'bg-indigo-100 dark:bg-indigo-900/50' 
+                    : 'bg-gray-100 dark:bg-gray-800'
+                }`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{service.shortDescription}</p>
-                <div className="flex items-center text-sm font-medium text-purple-400">
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{service.shortDescription}</p>
+                <div className="flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400">
                   <span>Learn more</span>
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
               
               {/* Hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Active indicator */}
               {activeService === index && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500"></div>
               )}
             </motion.div>
           ))}
@@ -456,34 +464,42 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl overflow-hidden bg-gray-900/30 backdrop-blur-sm border border-gray-800"
+            className="relative rounded-2xl overflow-hidden bg-white dark:bg-gray-900/70 backdrop-blur-sm border border-gray-200 dark:border-gray-800 shadow-xl"
           >
             {/* Service tabs - accordion style */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-10">
               <div className="lg:col-span-1">
-                <h3 className="text-2xl font-bold mb-6">{services[activeService].title}</h3>
+                <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{services[activeService].title}</h3>
                 
                 <div className="space-y-3">
                   {services[activeService].features.map((feature, index) => (
                     <div 
                       key={index}
-                      className={`border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 ${activeTab === `tab-${index}` ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30' : 'hover:border-gray-700'}`}
+                      className={`border rounded-xl overflow-hidden transition-all duration-300 ${
+                        activeTab === `tab-${index}` 
+                          ? 'bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 border-indigo-200 dark:border-indigo-700/50 shadow-md' 
+                          : 'border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 bg-white dark:bg-gray-900/50'
+                      }`}
                     >
                       <button 
                         className="w-full text-left p-4 flex items-center justify-between"
                         onClick={() => handleTabClick(`tab-${index}`)}
                       >
                         <div className="flex items-center gap-3">
-                          <div className={`p-2 rounded-lg ${activeTab === `tab-${index}` ? 'bg-purple-500/20' : 'bg-gray-800'}`}>
+                          <div className={`p-2 rounded-lg ${
+                            activeTab === `tab-${index}` 
+                              ? 'bg-indigo-100 dark:bg-indigo-800/30' 
+                              : 'bg-gray-100 dark:bg-gray-800'
+                          }`}>
                             {feature.icon}
                           </div>
-                          <span className="font-medium">{feature.title}</span>
+                          <span className="font-medium text-gray-900 dark:text-white">{feature.title}</span>
                         </div>
-                        <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${activeTab === `tab-${index}` ? 'rotate-90' : ''}`} />
+                        <ArrowRight className={`h-4 w-4 transition-transform duration-300 text-indigo-600 dark:text-indigo-400 ${activeTab === `tab-${index}` ? 'rotate-90' : ''}`} />
                       </button>
                       
                       {activeTab === `tab-${index}` && (
-                        <div className="p-4 pt-0 text-gray-400 text-sm border-t border-gray-800">
+                        <div className="p-4 pt-0 text-gray-600 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-800">
                           {feature.description}
                         </div>
                       )}
@@ -492,8 +508,8 @@ const ServicesSection = () => {
                 </div>
                 
                 <Link href={`/services/${services[activeService].id}`}>
-                  <Button className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 mt-6 w-full">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
+                  <Button className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white transition-all duration-300 mt-6 w-full">
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
                     <span className="relative flex items-center justify-center">Explore {services[activeService].title} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
                   </Button>
                 </Link>
@@ -501,34 +517,34 @@ const ServicesSection = () => {
               
               <div className="lg:col-span-2">
                 <div className="rounded-xl overflow-hidden relative group h-full">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative h-full flex flex-col">
-                    <div className="flex-grow">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/30 to-blue-500/30 rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative h-full flex flex-col bg-white dark:bg-gray-900 rounded-xl">
+                    <div className="flex-grow p-1">
                       {services[activeService].illustration}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-xl"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/20 to-transparent dark:from-black/70 dark:via-black/20 dark:to-transparent rounded-xl"></div>
                     </div>
                     
-                    <div className="relative z-10 p-6 bg-gray-900/80 backdrop-blur-md">
-                      <h4 className="text-lg font-medium mb-3">Key Benefits</h4>
+                    <div className="relative z-10 p-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800">
+                      <h4 className="text-lg font-medium mb-3 text-gray-900 dark:text-white">Key Benefits</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {services[activeService].benefits.slice(0, 4).map((benefit, idx) => (
                           <div key={idx} className="flex items-start gap-2 text-sm group">
-                            <div className="mt-1 text-purple-400 group-hover:text-purple-300 transition-colors">•</div>
-                            <span className="text-gray-300 group-hover:text-white transition-colors">{benefit}</span>
+                            <div className="mt-1 text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">•</div>
+                            <span className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{benefit}</span>
                           </div>
                         ))}
                       </div>
                       
-                      <div className="mt-4 pt-4 border-t border-gray-800">
-                        <h4 className="text-lg font-medium mb-3">Technologies</h4>
+                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+                        <h4 className="text-lg font-medium mb-3 text-gray-900 dark:text-white">Technologies</h4>
                         <div className="flex flex-wrap gap-2">
                           {services[activeService].techStack.slice(0, 5).map((tech, idx) => (
-                            <span key={idx} className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full border border-gray-700 hover:bg-gray-700 transition-colors">
+                            <span key={idx} className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                               {tech}
                             </span>
                           ))}
                           {services[activeService].techStack.length > 5 && (
-                            <span className="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full border border-purple-500/30">
+                            <span className="text-xs bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-800/50">
                               +{services[activeService].techStack.length - 5} more
                             </span>
                           )}
@@ -543,8 +559,8 @@ const ServicesSection = () => {
             </div>
             
             {/* Background decorative elements */}
-            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-purple-500/5 via-blue-500/5 to-transparent opacity-80 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-indigo-500/5 via-blue-500/5 to-transparent opacity-80 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-indigo-500/5 to-transparent opacity-50 pointer-events-none"></div>
           </motion.div>
         </div>
       </div>
