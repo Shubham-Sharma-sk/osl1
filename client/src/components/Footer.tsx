@@ -114,10 +114,10 @@ const Footer = () => {
             </Link>
           </div>
           
-          {/* Scroll to top button */}
+          {/* Scroll to top button - hidden on mobile */}
           <button 
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-colors z-50"
+            className="fixed bottom-8 right-8 bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-colors z-50 hidden md:block"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-5 h-5" />
