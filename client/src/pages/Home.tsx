@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesMarquee from "@/components/ServicesMarquee";
 import ServicesSection from "@/components/ServicesSection";
-import ProcessSection from "@/components/ProcessSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
@@ -14,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     // Set title
     document.title = "OSL - Web Development & Digital Services";
-
+    
     // Global reveal function
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -52,7 +51,6 @@ const Home = () => {
       <AboutSection />
       <ServicesMarquee />
       <ServicesSection />
-      <ProcessSection />
       <ProjectsSection />
       <TestimonialsSection />
       <ContactSection />
