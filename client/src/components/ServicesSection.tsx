@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import { ArrowRight, Cpu, Layers, Code, PenTool, BarChart3, BrainCircuit, MessageSquareText, LineChart, Zap, Rocket, Building, Wrench, Settings, Headset, UserCheck } from "lucide-react";
 import { CircleBlob, GridPattern, FloatingShapes, FloatingCircles, Sparkle, GlowingSphere } from "./ui/decorative-elements";
 import WebDevIllustration from "./ui/illustrations/WebDevIllustration";
@@ -330,7 +329,7 @@ export const services: Service[] = [
     ],
     illustration: <StrategyIllustration />
   },
-  // New Service 1: Commercial Relationship Management
+  // New Service 1: Commercial Relationship Management - with Account Management removed
   {
     id: "commercial-relationship-management",
     title: "Commercial Relationship Management",
@@ -347,11 +346,6 @@ export const services: Service[] = [
         title: "Partnership Development",
         description: "Identifying and fostering strategic partnerships to expand your business ecosystem.",
         icon: <Building className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
-      },
-      {
-        title: "Account Management",
-        description: "Comprehensive account management to ensure client satisfaction and retention.",
-        icon: <LineChart className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
       },
       {
         title: "Contract Negotiation",
@@ -656,14 +650,6 @@ const ServicesSection = () => {
                     </div>
                   ))}
                 </div>
-                
-                <Button 
-                  className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white transition-all duration-300 mt-6 w-full"
-                  onClick={() => window.location.href = `/services/${services[activeService].id}`}
-                >
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
-                  <span className="relative flex items-center justify-center">Explore {services[activeService].title} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
-                </Button>
               </div>
               
               <div className="lg:col-span-2">

@@ -51,7 +51,7 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           {/* <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal">About Our Agency</h2> */}
           <p className="text-xl max-w-3xl mx-auto opacity-80 reveal">
-            We're a digital agency of who can provide you with the best possible results.
+            {/* We're a digital agency of who can provide you with the best possible results. */}
           </p>
         </div>
 

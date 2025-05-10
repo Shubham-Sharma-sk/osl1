@@ -3,7 +3,6 @@ const ServicesMarquee = () => {
     "WEB DEVELOPMENT",
     "DIGITAL DESIGN",
     "BRAND IDENTITY",
-    "E-COMMERCE",
     "SEO OPTIMIZATION"
   ];
 
