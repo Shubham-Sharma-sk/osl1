@@ -1,6 +1,5 @@
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { Github, Twitter, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -18,49 +17,12 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-indigo-50/50 dark:from-indigo-950/30 to-transparent opacity-50 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto relative">
-        {/* Top part with logo, description and social links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 pb-12 border-b border-gray-200 dark:border-gray-800/50">
-          {/* Logo and description */}
-          <div className="lg:col-span-2">
-            <div className="flex flex-col">
-              <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 mb-4">OSL</span>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-                We craft exceptional digital experiences through innovative web development, design, and strategy.
-              </p>
-              <div className="flex items-center space-x-2">
-                <div className="text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-4 py-1.5 rounded-full font-medium border border-indigo-200 dark:border-indigo-800/50">
-                  Paris, France
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Quick links */}
-          <div>
-            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Projects
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
+        {/* Top part with only contact information */}
+        <div className="flex justify-center mb-12 pb-12 border-b border-gray-200 dark:border-gray-800/50">
           {/* Connect */}
           <div>
-            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Connect</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4 text-center">Connect</h3>
+            <ul>
               <li>
                 <a 
                   href="mailto:contact@oslstrategy.com" 
@@ -70,29 +32,6 @@ const Footer = () => {
                   <span>contact@oslstrategy.com</span>
                 </a>
               </li>
-              {/* <li className="flex space-x-4">
-                <a 
-                  href="#" 
-                  className="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>
