@@ -81,7 +81,15 @@ const WebDevIllustration = () => {
         
         {/* Browser window */}
         <rect x="450" y="200" width="200" height="150" rx="5" fill="#FFFFFF" stroke="#3B82F6" strokeWidth="2" />
-        <rect x="450" y="200" width="200" height="25" rx="5 5 0 0" fill="#F3F4F6" stroke="#3B82F6" strokeWidth="2" />
+        
+        {/* Fixed: Replaced the rect with invalid rx="5 5 0 0" with a path for proper top-rounded corners */}
+        <path 
+          d="M455,200 H645 C647.76,200 650,202.24 650,205 V225 H450 V205 C450,202.24 452.24,200 455,200 Z" 
+          fill="#F3F4F6" 
+          stroke="#3B82F6" 
+          strokeWidth="2"
+        />
+        
         <circle cx="465" cy="212" r="5" fill="#EF4444" />
         <circle cx="485" cy="212" r="5" fill="#F59E0B" />
         <circle cx="505" cy="212" r="5" fill="#10B981" />

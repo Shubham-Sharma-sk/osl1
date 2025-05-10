@@ -94,7 +94,13 @@ const DesignIllustration = () => {
         {/* Mobile device mockup */}
         <rect x="200" y="370" width="80" height="120" rx="10" fill="#1F2937" stroke="#8B5CF6" strokeWidth="2" />
         <rect x="205" y="375" width="70" height="100" rx="5" fill="#FFFFFF" />
-        <rect x="205" y="375" width="70" height="15" rx="5 5 0 0" fill="#8B5CF6" />
+        
+        {/* Fixed: Replaced invalid rx="5 5 0 0" with a path for rounded top corners */}
+        <path 
+          d="M210,375 H270 C272.76,375 275,377.24 275,380 V390 H205 V380 C205,377.24 207.24,375 210,375 Z" 
+          fill="#8B5CF6" 
+        />
+        
         <circle cx="240" cy="485" r="5" fill="#D1D5DB" />
         
         {/* Cursor */}

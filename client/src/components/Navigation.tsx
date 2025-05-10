@@ -39,13 +39,12 @@ const Navigation = () => {
       <div className="lg:hidden fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-50 p-4 flex justify-between items-center border-b border-gray-800/40">
         {/* Mobile Logo */}
         <Link href="/">
-          <a className="flex items-center">
-            <img 
-              src="/assets/osl-logo.png" 
-              alt="OSL Logo" 
-              className="h-10 w-auto"
-            />
-          </a>
+          {/* Remove the nested <a> tag and include its className directly in the Link */}
+          <img 
+            src="/assets/osl-logo.png" 
+            alt="OSL Logo" 
+            className="h-10 w-auto cursor-pointer"
+          />
         </Link>
         
         {/* Mobile Toggle Button */}
@@ -67,13 +66,12 @@ const Navigation = () => {
               <div className="bg-black/80 dark:bg-black/90 backdrop-blur-md border border-gray-800 rounded-full px-6 py-3 flex items-center">
                 {/* Logo */}
                 <Link href="/">
-                  <a className="flex items-center">
-                    <img 
-                      src="/assets/osl-logo.png" 
-                      alt="OSL Logo" 
-                      className="h-12 w-auto"
-                    />
-                  </a>
+                  {/* Remove the nested <a> tag and include its className directly in the Link */}
+                  <img 
+                    src="/assets/osl-logo.png" 
+                    alt="OSL Logo" 
+                    className="h-12 w-auto cursor-pointer"
+                  />
                 </Link>
 
                 {/* Desktop Nav Links */}

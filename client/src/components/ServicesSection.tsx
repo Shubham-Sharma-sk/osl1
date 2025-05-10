@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { ArrowRight, Cpu, Layers, Code, PenTool, BarChart3, BrainCircuit, MessageSquareText, LineChart, Zap, Rocket } from "lucide-react";
+import { ArrowRight, Cpu, Layers, Code, PenTool, BarChart3, BrainCircuit, MessageSquareText, LineChart, Zap, Rocket, Building, Wrench, Settings, Headset, UserCheck } from "lucide-react";
 import { CircleBlob, GridPattern, FloatingShapes, FloatingCircles, Sparkle, GlowingSphere } from "./ui/decorative-elements";
 import WebDevIllustration from "./ui/illustrations/WebDevIllustration";
 import StrategyIllustration from "./ui/illustrations/StrategyIllustration";
@@ -329,6 +329,156 @@ export const services: Service[] = [
       }
     ],
     illustration: <StrategyIllustration />
+  },
+  // New Service 1: Commercial Relationship Management
+  {
+    id: "commercial-relationship-management",
+    title: "Commercial Relationship Management",
+    shortDescription: "On-site commercial relationship management services to foster business growth and partnerships.",
+    fullDescription: "Our Commercial Relationship Management services provide dedicated on-site resources to manage and grow your business relationships. We work as an extension of your team to nurture client relationships, identify new opportunities, and ensure smooth communication between all stakeholders.",
+    icon: <UserCheck className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+    features: [
+      {
+        title: "Client Relationship Building",
+        description: "Dedicated on-site professionals who build and maintain strong client relationships.",
+        icon: <UserCheck className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "Partnership Development",
+        description: "Identifying and fostering strategic partnerships to expand your business ecosystem.",
+        icon: <Building className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "Account Management",
+        description: "Comprehensive account management to ensure client satisfaction and retention.",
+        icon: <LineChart className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "Contract Negotiation",
+        description: "Expert contract negotiation and management to maximize value for all parties.",
+        icon: <PenTool className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      }
+    ],
+    benefits: [
+      "Improved client retention and satisfaction",
+      "Increased revenue through expanded partnerships",
+      "Reduced communication barriers between stakeholders",
+      "Early identification of new business opportunities"
+    ],
+    techStack: [
+      "CRM Systems", "Business Intelligence Tools", "Contract Management Software", "Communication Platforms", "Project Management", "Analytics"
+    ],
+    processSteps: [
+      {
+        title: "Relationship Assessment",
+        description: "Evaluating current business relationships and identifying improvement opportunities."
+      },
+      {
+        title: "Strategy Development",
+        description: "Creating a tailored relationship management strategy for your business."
+      },
+      {
+        title: "On-site Implementation",
+        description: "Deploying dedicated relationship managers to your location."
+      },
+      {
+        title: "Performance Monitoring",
+        description: "Tracking relationship health and business outcomes through key metrics."
+      },
+      {
+        title: "Continuous Improvement",
+        description: "Regularly refining approaches based on feedback and results."
+      }
+    ],
+    image: "https://images.unsplash.com/photo-1556157382-97eda2f9e69d",
+    caseStudies: [
+      {
+        title: "Enterprise Partner Network Expansion",
+        description: "Implemented on-site relationship management for a technology firm seeking to expand its partner network.",
+        result: "53% increase in partner-generated revenue, 40% expansion of partner network"
+      },
+      {
+        title: "Key Account Retention Program",
+        description: "Deployed relationship managers to work on-site with critical client accounts.",
+        result: "98% client retention rate, 27% increase in account value through upselling"
+      }
+    ],
+    illustration: <StrategyIllustration />
+  },
+  // New Service 2: Industrial Technical Services
+  {
+    id: "industrial-technical-services",
+    title: "Industrial Technical Services",
+    shortDescription: "On-site deployment, configuration, technical support, and maintenance for industrial systems.",
+    fullDescription: "Our Industrial Technical Services provide expert on-site support for the deployment, configuration, and maintenance of industrial systems and equipment. Our team of skilled technicians ensures your technical infrastructure operates at peak performance with minimal downtime.",
+    icon: <Wrench className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+    features: [
+      {
+        title: "On-site Deployment & Configuration",
+        description: "Expert installation and configuration of industrial systems and equipment at your facility.",
+        icon: <Settings className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "Technical Support",
+        description: "Rapid response technical support to diagnose and resolve issues quickly and efficiently.",
+        icon: <Headset className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "Preventive Maintenance",
+        description: "Regular maintenance schedules to prevent issues before they impact operations.",
+        icon: <Wrench className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      },
+      {
+        title: "System Optimization",
+        description: "Performance tuning and optimization to maximize efficiency and output.",
+        icon: <Zap className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
+      }
+    ],
+    benefits: [
+      "Reduced system downtime and operational disruptions",
+      "Extended equipment lifespan through proper maintenance",
+      "Improved system performance and efficiency",
+      "Lower total cost of ownership for industrial equipment"
+    ],
+    techStack: [
+      "Industrial Control Systems", "SCADA", "PLC Programming", "IoT Sensors", "Predictive Maintenance Tools", "Diagnostic Equipment"
+    ],
+    processSteps: [
+      {
+        title: "Technical Assessment",
+        description: "Comprehensive assessment of your current systems and requirements."
+      },
+      {
+        title: "Service Planning",
+        description: "Developing a customized service plan tailored to your operational needs."
+      },
+      {
+        title: "Deployment & Setup",
+        description: "Professional installation and configuration of systems and equipment."
+      },
+      {
+        title: "Testing & Validation",
+        description: "Thorough testing to ensure all systems meet performance standards."
+      },
+      {
+        title: "Ongoing Support & Maintenance",
+        description: "Regular maintenance visits and on-call support as needed."
+      }
+    ],
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789",
+    caseStudies: [
+      {
+        title: "Manufacturing Plant Modernization",
+        description: "Deployed and configured new automation systems for a manufacturing facility.",
+        result: "30% increase in production efficiency, 45% reduction in maintenance costs"
+      },
+      {
+        title: "Critical Infrastructure Support",
+        description: "Provided ongoing technical support and maintenance for critical utility infrastructure.",
+        result: "99.9% system uptime, 60% reduction in emergency service calls"
+      }
+    ],
+    illustration: <WebDevIllustration />
   }
 ];
 
@@ -381,8 +531,8 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 relative">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="inline-block px-4 py-1.5 mb-6 rounded-full text-sm font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/50"
@@ -416,7 +566,7 @@ const ServicesSection = () => {
           <Sparkle className="absolute top-0 right-1/4 text-indigo-500" />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -424,14 +574,14 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 ${
+              className={`relative group cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 h-full flex flex-col ${
                 activeService === index 
                   ? 'bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 border-indigo-200 dark:border-indigo-700/50 shadow-lg' 
                   : 'bg-white/80 dark:bg-gray-900/50 backdrop-blur-sm border-gray-200 dark:border-gray-800 hover:border-indigo-200 dark:hover:border-indigo-700/50'
               }`}
               onClick={() => setActiveService(index)}
             >
-              <div className="p-6">
+              <div className="p-6 h-full flex flex-col">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${
                   activeService === index 
                     ? 'bg-indigo-100 dark:bg-indigo-900/50' 
@@ -440,8 +590,8 @@ const ServicesSection = () => {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{service.shortDescription}</p>
-                <div className="flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">{service.shortDescription}</p>
+                <div className="flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-auto">
                   <span>Learn more</span>
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -507,12 +657,13 @@ const ServicesSection = () => {
                   ))}
                 </div>
                 
-                <Link href={`/services/${services[activeService].id}`}>
-                  <Button className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white transition-all duration-300 mt-6 w-full">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
-                    <span className="relative flex items-center justify-center">Explore {services[activeService].title} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
-                  </Button>
-                </Link>
+                <Button 
+                  className="group relative overflow-hidden bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white transition-all duration-300 mt-6 w-full"
+                  onClick={() => window.location.href = `/services/${services[activeService].id}`}
+                >
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
+                  <span className="relative flex items-center justify-center">Explore {services[activeService].title} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
+                </Button>
               </div>
               
               <div className="lg:col-span-2">
