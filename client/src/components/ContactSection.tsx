@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
@@ -81,6 +81,12 @@ const ContactSection = () => {
             contact@oslstrategy.com
             <ExternalLink className="w-3 h-3" />
           </a>
+          <p className="text-gray-700 dark:text-gray-300 mt-4 mb-1">
+            Phone:
+          </p>
+          <a href="tel:+33146884193" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300 font-medium">
+            +33 1 46 88 41 93
+          </a>
         </motion.div>
 
         <motion.div 
@@ -95,7 +101,7 @@ const ContactSection = () => {
               <MapPin className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Location</h3>
-            <p className="text-gray-700 dark:text-gray-300 font-medium">Paris, France</p>
+            <p className="text-gray-700 dark:text-gray-300 font-medium">25 Rue des Bas, 92600 Asnières-sur-Seine, France</p>
             
             <div className="mt-4 w-full max-w-xs h-1 bg-gradient-to-r from-transparent via-indigo-300 dark:via-indigo-700 to-transparent rounded-full opacity-60"></div>
           </div>

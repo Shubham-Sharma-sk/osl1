@@ -2,17 +2,17 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ServicesMarquee from "@/components/ServicesMarquee";
 import ServicesSection from "@/components/ServicesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+// import QuotesSection from "@/components/QuotesSection";
 
 const Home = () => {
   useEffect(() => {
     // Set title
-    document.title = "OSL - Web Development & Digital Services";
+    document.title = "OSL - AI Solutions & Digital Intelligence";
     
     // Global reveal function
     const revealElements = document.querySelectorAll('.reveal');
@@ -49,7 +49,7 @@ const Home = () => {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <ServicesMarquee />
+      {/* <QuotesSection /> */}
       <ServicesSection />
       <ProjectsSection />
       <TestimonialsSection />

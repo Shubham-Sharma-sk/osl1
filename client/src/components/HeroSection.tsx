@@ -33,11 +33,10 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
         <div className="relative z-10 lg:col-span-5">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none mb-8 reveal font-['Bricolage_Grotesque']">
-            Creating<br />Digital<br /><span className="text-accent bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Experiences</span>
+            Powering<br />Digital<br /><span className="text-accent bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Intelligence</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-2xl opacity-80 mb-12 reveal font-['Bricolage_Grotesque']">
-            We craft exceptional digital solutions that drive innovation and transform businesses through cutting-edge web development.
-          </p>
+          We create intelligent digital solutions that empower businesses, leveraging cutting-edge AI agents, automation, and advanced analytics to drive innovation and efficiency          </p>
           <div className="flex flex-col md:flex-row gap-6 reveal">
             <a 
               href="#contact" 
@@ -47,11 +46,6 @@ const HeroSection = () => {
               <span className="relative flex items-center">Start a project <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" /></span>
             </a>
           </div>
-          {/* Modern address display */}
-          {/* <div className="mt-12 p-6 rounded-xl bg-gradient-to-r from-purple-700/80 to-blue-800/80 text-white shadow-lg w-fit font-semibold text-lg tracking-wide">
-            <span className="block text-xs text-white/60 mb-1 uppercase tracking-wider">Our Address</span>
-            25 RUE des Bas<br />92600 Asnières-sur-Seine<br />FRANCE
-          </div> */}
         </div>
         <div className="hidden lg:block lg:col-span-7 relative z-10 reveal">
           <div className="w-full h-full flex justify-end">

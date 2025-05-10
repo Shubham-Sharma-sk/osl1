@@ -37,15 +37,17 @@ const Navigation = () => {
     <>
       {/* Mobile Fixed Navigation Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-50 p-4 flex justify-between items-center border-b border-gray-800/40">
-        {/* Mobile Logo */}
-        <Link href="/">
-          {/* Remove the nested <a> tag and include its className directly in the Link */}
-          <img 
-            src="/assets/osl-logo.png" 
-            alt="OSL Logo" 
-            className="h-10 w-auto cursor-pointer"
-          />
-        </Link>
+        {/* Mobile Logo with Company Name */}
+        <a href="/" className="no-underline">
+          <div className="flex items-center -space-x-1">
+            <img 
+              src="/assets/osl-logo.png" 
+              alt="OSL Strategy Logo" 
+              className="h-10 w-auto cursor-pointer"
+            />
+            <span className="font-bold text-xl tracking-wide bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">OSL Strategy</span>
+          </div>
+        </a>
         
         {/* Mobile Toggle Button */}
         <button
@@ -63,19 +65,21 @@ const Navigation = () => {
           {/* Desktop Navbar */}
           <div className="flex justify-center items-center relative">
             <div className="flex">
-              <div className="bg-black/80 dark:bg-black/90 backdrop-blur-md border border-gray-800 rounded-full px-6 py-3 flex items-center">
-                {/* Logo */}
-                <Link href="/">
-                  {/* Remove the nested <a> tag and include its className directly in the Link */}
-                  <img 
-                    src="/assets/osl-logo.png" 
-                    alt="OSL Logo" 
-                    className="h-12 w-auto cursor-pointer"
-                  />
-                </Link>
+              <div className="bg-black/80 dark:bg-black/90 backdrop-blur-md border border-gray-800 rounded-full px-8 py-3 flex items-center">
+                {/* Logo with Company Name */}
+                <a href="/" className="no-underline">
+                  <div className="flex items-center -space-x-1">
+                    <img 
+                      src="/assets/osl-logo.png" 
+                      alt="OSL Strategy Logo" 
+                      className="h-12 w-auto cursor-pointer"
+                    />
+                    <span className="font-bold text-2xl tracking-wide bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">OSL Strategy</span>
+                  </div>
+                </a>
 
                 {/* Desktop Nav Links */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-6">
                   {sections.map((section) => (
                     <a
                       key={section}
